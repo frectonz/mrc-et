@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Script from "next/script";
 import { GetStaticProps } from "next";
 
 import { HomePageTemplate, HomePageProps } from "../template/HomePage";
@@ -6,9 +6,7 @@ import { HomePageTemplate, HomePageProps } from "../template/HomePage";
 export default function HomePage(props: HomePageProps) {
   return (
     <>
-      <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Head>
+      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <HomePageTemplate {...props} />;
     </>
   );
