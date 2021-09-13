@@ -4,7 +4,7 @@ import HomePagePreview from "./HomePagePreview";
 CMS.init({
   config: {
     backend: {
-      name: "test-repo",
+      name: "git-gateway",
     },
     media_folder: "public/hero",
     public_folder: "/hero",

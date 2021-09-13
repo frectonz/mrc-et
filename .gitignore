@@ -34,4 +34,5 @@ yarn-error.log*
 .vercel
 
 dist
-/public/admin
+admin.html
+_snowpack
