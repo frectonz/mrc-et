@@ -5,6 +5,7 @@ CMS.init({
   config: {
     backend: {
       name: "git-gateway",
+      branch: "main",
     },
     media_folder: "public/hero",
     public_folder: "/hero",
