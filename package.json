@@ -7,21 +7,25 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf .next",
-    "export": "next build && next export"
+    "clean": "rm -rf .next build out cms/dist",
+    "export": "next build && next export && yarn cms:build && cp -r cms/dist public/admin",
+    "cms:build": "snowpack build",
+    "cms:dev": "snowpack dev"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
     "@choc-ui/chakra-autocomplete": "^4.5.10",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@snowpack/plugin-typescript": "^1.2.1",
+    "@types/react-dom": "^17.0.9",
     "framer-motion": "^4",
-    "gray-matter": "^4.0.3",
     "netlify-cms-app": "^2.15.41",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
+    "snowpack": "^3.8.8",
     "yaml": "^1.10.2"
   },
   "devDependencies": {
