@@ -1,9 +1,17 @@
+import Head from "next/head";
 import { GetStaticProps } from "next";
 
 import { HomePageTemplate, HomePageProps } from "../template/HomePage";
 
 export default function HomePage(props: HomePageProps) {
-  return <HomePageTemplate {...props} />;
+  return (
+    <>
+      <Head>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      </Head>
+      <HomePageTemplate {...props} />;
+    </>
+  );
 }
 
 // Library
