@@ -1,0 +1,11 @@
+headline_title: Lorem, ipsum dolor.
+headline_detail: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  Aliquid obcaecati deleniti sapiente, placeat tempora quis ad
+  nostrum perspiciatis pariatur quasi!
+headline_image: /hero/covid19.png
+
+headline_button1_label: Book A Test
+headline_button1_link: /tests
+
+headline_button2_label: Contact Us
+headline_button2_link: /contact

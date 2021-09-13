@@ -166,7 +166,7 @@ function FollowUs({ facebookLink, twitterLink, linkedInLink }: FollowUsProps) {
             <NextLink key={i} href={href}>
               <a>
                 <MotionBox>
-                  <Icon fontSize="1.4rem" />
+                  <Icon color="#3fa1ec" fontSize="1.4rem" />
                 </MotionBox>
               </a>
             </NextLink>
