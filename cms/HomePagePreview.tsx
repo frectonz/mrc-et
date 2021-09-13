@@ -1,5 +1,11 @@
 import React from "react";
-import { HomePageTemplate } from "../../template/HomePage";
+
+// Components
+import Hero from "../components/main/Hero";
+import SecondaryButton from "../components/utils/SecondaryButton";
+
+// ChakraUI
+import { Flex, Spacer } from "@chakra-ui/react";
 
 export default function HomePagePreview({ entry }: { entry: any }) {
   const headlineTitle = entry.getIn(["data", "headline_title"]);
@@ -13,17 +19,17 @@ export default function HomePagePreview({ entry }: { entry: any }) {
   const headlineButton2Link = entry.getIn(["data", "headline_button2_link"]);
 
   return (
-    <HomePageTemplate
-      indexPageData={{
-        headlineTitle,
-        headlineDetail,
-        headlineImage,
-        headlineButton1Label,
-        headlineButton1Link,
-        headlineButton2Label,
-        headlineButton2Link,
-      }}
-      services={[]}
-    />
+    <Hero
+      textColor="white"
+      title={headlineTitle}
+      text={headlineDetail}
+      image={headlineImage}
+    >
+      <Flex>
+        <SecondaryButton size="md">{headlineButton1Label}</SecondaryButton>
+        <Spacer width={10} />
+        <SecondaryButton size="md">{headlineButton2Label}</SecondaryButton>
+      </Flex>
+    </Hero>
   );
 }

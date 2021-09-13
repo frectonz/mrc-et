@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { GetStaticProps } from "next";
 
-import { HomePageTemplate, HomePageProps } from "../template/HomePage";
+import { HomePageTemplate, HomePageProps } from "../templates/HomePage";
 
 export default function HomePage(props: HomePageProps) {
   return (
