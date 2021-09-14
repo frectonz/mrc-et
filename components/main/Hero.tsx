@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 // ChakraUI
 import { Text, Stack, Heading } from "@chakra-ui/react";

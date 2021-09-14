@@ -1,3 +1,6 @@
+import React from "react";
+
+// Components
 import MotionBox from "./MotionBox";
 
 // ChakraUI

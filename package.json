@@ -7,21 +7,23 @@
     "lint": "next lint",
     "start": "next start",
     "export": "next export",
-    "clean": "rm -rf .next build public/admin.js",
     "build:next": "next build",
+    "clean": "rm -rf .next build out public/admin.js",
     "build:all": "yarn build:cms && yarn build:next && yarn export",
-    "build:cms": "esbuild cms/index.tsx --bundle --outfile=public/admin.js"
+    "build:cms": "esbuild cms/index.tsx --bundle --outfile=public/admin.js --loader:.tsx=tsx"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
     "@choc-ui/chakra-autocomplete": "^4.5.10",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@types/react-frame-component": "^4.1.2",
     "framer-motion": "^4",
     "netlify-cms-app": "^2.15.41",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "^17.0.2",
+    "react-frame-component": "^5.1.0",
     "react-icons": "^4.2.0",
     "yaml": "^1.10.2"
   },

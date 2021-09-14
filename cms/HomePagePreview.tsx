@@ -1,13 +1,19 @@
 import React from "react";
+import Frame, { FrameContextConsumer } from "react-frame-component";
+import { PreviewTemplateComponentProps } from "netlify-cms-core";
+
+// ChakraUI
+import { Flex, Spacer, ChakraProvider } from "@chakra-ui/react";
 
 // Components
 import Hero from "../components/main/Hero";
 import SecondaryButton from "../components/utils/SecondaryButton";
 
-// ChakraUI
-import { Flex, Spacer } from "@chakra-ui/react";
-
-export default function HomePagePreview({ entry }: { entry: any }) {
+export default function HomePagePreview({
+  entry,
+  window,
+  document,
+}: PreviewTemplateComponentProps) {
   const headlineTitle = entry.getIn(["data", "headline_title"]);
   const headlineDetail = entry.getIn(["data", "headline_detail"]);
   const headlineImage = entry.getIn(["data", "headline_image"]);
@@ -19,17 +25,19 @@ export default function HomePagePreview({ entry }: { entry: any }) {
   const headlineButton2Link = entry.getIn(["data", "headline_button2_link"]);
 
   return (
-    <Hero
-      textColor="white"
-      title={headlineTitle}
-      text={headlineDetail}
-      image={headlineImage}
-    >
-      <Flex>
-        <SecondaryButton size="md">{headlineButton1Label}</SecondaryButton>
-        <Spacer width={10} />
-        <SecondaryButton size="md">{headlineButton2Label}</SecondaryButton>
-      </Flex>
-    </Hero>
+    <ChakraProvider>
+      <Hero
+        textColor="white"
+        title={headlineTitle}
+        text={headlineDetail}
+        image={headlineImage}
+      >
+        <Flex>
+          <SecondaryButton size="md">{headlineButton1Label}</SecondaryButton>
+          <Spacer width={10} />
+          <SecondaryButton size="md">{headlineButton2Label}</SecondaryButton>
+        </Flex>
+      </Hero>
+    </ChakraProvider>
   );
 }

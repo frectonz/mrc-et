@@ -12,11 +12,11 @@ export default function about() {
           MRC-ET Advanced Laboratory
         </Heading>
         <Heading
-          textAlign="center"
           size="sm"
-          fontWeight="hairline"
-          width="50ch"
+          maxW="50ch"
           margin="auto"
+          textAlign="center"
+          fontWeight="hairline"
         >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus magnam
           doloremque corporis velit quas vitae exercitationem nesciunt esse
