@@ -17,13 +17,19 @@ import TwoColumnSection from "../components/main/TwoColumnSection/TwoColumnSecti
 
 import { IndexPageData } from "../lib/indexPage";
 import { ServiceData } from "../interfaces/ServiceData";
+import { Testimonial } from "../interfaces/Testimonial";
 
 export interface HomePageProps {
   services: ServiceData[];
+  testimonials: Testimonial[];
   indexPageData: IndexPageData;
 }
 
-export default function HomePage({ indexPageData, services }: HomePageProps) {
+export default function HomePage({
+  indexPageData,
+  services,
+  testimonials,
+}: HomePageProps) {
   return (
     <>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
@@ -84,31 +90,7 @@ export default function HomePage({ indexPageData, services }: HomePageProps) {
         </MainContainer>
 
         <MainContainer>
-          <Testimonials
-            testimonials={[
-              {
-                personImage: "/hero/covid19.png",
-                personTitle: "John Cat",
-                personSubtitle: "CEO of CatsR's",
-                testimonial:
-                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aut.",
-              },
-              {
-                personImage: "/hero/covid19.png",
-                personTitle: "John Cat",
-                personSubtitle: "CEO of CatsR's",
-                testimonial:
-                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aut.",
-              },
-              {
-                personImage: "/hero/covid19.png",
-                personTitle: "John Cat",
-                personSubtitle: "CEO of CatsR's",
-                testimonial:
-                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, aut.",
-              },
-            ]}
-          />
+          <Testimonials testimonials={testimonials} />
         </MainContainer>
       </Layout>
     </>
@@ -117,11 +99,13 @@ export default function HomePage({ indexPageData, services }: HomePageProps) {
 
 // Library
 import { getAllServices } from "../lib/services";
+import { getAllTestimonials } from "../lib/testimonials";
 import { readIndexPageData } from "../lib/indexPage";
 
 export const getStaticProps: GetStaticProps<HomePageProps> = () => {
   const services = getAllServices();
+  const testimonials = getAllTestimonials();
   const indexPageData = readIndexPageData();
 
-  return { props: { services, indexPageData } };
+  return { props: { services, indexPageData, testimonials } };
 };
