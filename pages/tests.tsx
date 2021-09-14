@@ -22,14 +22,16 @@ import {
 } from "@choc-ui/chakra-autocomplete";
 
 // Interfaces
+import { TestsPageData } from "../lib/testsPage";
 import { FooterData } from "../interfaces/FooterData";
 
 interface TestsPageProps {
   tests: TestData[];
+  hero: TestsPageData;
   footerData: FooterData;
 }
 
-export default function TestsPage({ tests, footerData }: TestsPageProps) {
+export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
   const { query } = useRouter();
   const [testsList, setTestsList] = useState(tests);
 
@@ -84,9 +86,9 @@ export default function TestsPage({ tests, footerData }: TestsPageProps) {
     <Layout footerData={footerData}>
       <Hero
         textColor="white"
-        image="/hero/lab.jpg"
-        title="Lorem, ipsum dolor."
-        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ducimus."
+        image={hero.headlineImage}
+        title={hero.headlineTitle}
+        text={hero.headlineDetail}
       />
       <MainContainer my={30}>
         <AutoComplete onChange={handleChange}>
@@ -118,10 +120,12 @@ export default function TestsPage({ tests, footerData }: TestsPageProps) {
 // Library
 import { getAllTests } from "../lib/tests";
 import { readIndexPageData } from "../lib/indexPage";
+import { readTestsPageData } from "../lib/testsPage";
 
 export const getStaticProps: GetStaticProps<TestsPageProps> = () => {
   const tests = getAllTests();
   const indexPageData = readIndexPageData();
+  const testsPageData = readTestsPageData();
 
-  return { props: { tests, footerData: indexPageData } };
+  return { props: { tests, footerData: indexPageData, hero: testsPageData } };
 };
