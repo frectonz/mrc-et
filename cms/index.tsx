@@ -3,7 +3,7 @@ import { CmsConfig } from "netlify-cms-core";
 
 const config: CmsConfig = {
   backend: {
-    name: "test-repo",
+    name: "git-gateway",
     branch: "main",
   },
   local_backend: true,
