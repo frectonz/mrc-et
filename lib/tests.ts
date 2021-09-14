@@ -28,26 +28,3 @@ export function readTestFile(testFile: string): TestData {
     price: parsed.price_birr,
   };
 }
-
-export function getAllServices(): string[] {
-  const testFiles = readdirSync(TESTS_DIR);
-  const services: string[] = [];
-
-  for (const testFile of testFiles) {
-    const service = getService(join(TESTS_DIR, testFile));
-    const index = services.findIndex((s) => s === service);
-
-    if (index == -1) {
-      services.push(service);
-    }
-  }
-
-  return services;
-}
-
-export function getService(testFile: string): string {
-  const content = readFileSync(testFile, "utf-8");
-  const parsed = parse(content);
-
-  return parsed.test_category;
-}

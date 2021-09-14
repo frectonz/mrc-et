@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // NextJs
 import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
 
 // Interfaces
 import { TestData } from "../interfaces/Test";
@@ -25,7 +26,19 @@ interface TestsPageProps {
 }
 
 export default function TestsPage({ tests }: TestsPageProps) {
+  const { query } = useRouter();
   const [testsList, setTestsList] = useState(tests);
+
+  useEffect(() => {
+    const code = query?.code;
+    if (typeof code === "string") {
+      setTestsList(
+        testsList.filter((test) =>
+          test.code.toLowerCase().includes(code.toLowerCase())
+        )
+      );
+    }
+  }, [query, setTestsList]);
 
   const testCodes = tests.map((test) => {
     return {
@@ -71,7 +84,7 @@ export default function TestsPage({ tests }: TestsPageProps) {
         title="Lorem, ipsum dolor."
         text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ducimus."
       />
-      <MainContainer my={50}>
+      <MainContainer my={30}>
         <AutoComplete onChange={handleChange}>
           <AutoCompleteInput
             autoComplete="none"
@@ -79,7 +92,11 @@ export default function TestsPage({ tests }: TestsPageProps) {
           />
           <AutoCompleteList>
             {options.map((option, oid) => (
-              <AutoCompleteItem key={`opt-${oid}`} value={option.value}>
+              <AutoCompleteItem
+                id={`opt-${oid}`}
+                key={`opt-${oid}`}
+                value={option.value}
+              >
                 {option.label}
               </AutoCompleteItem>
             ))}

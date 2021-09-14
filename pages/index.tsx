@@ -16,9 +16,10 @@ import Testimonials from "../components/main/Testimonials/Testimonials";
 import TwoColumnSection from "../components/main/TwoColumnSection/TwoColumnSection";
 
 import { IndexPageData } from "../lib/indexPage";
+import { ServiceData } from "../interfaces/ServiceData";
 
 export interface HomePageProps {
-  services: string[];
+  services: ServiceData[];
   indexPageData: IndexPageData;
 }
 
@@ -64,9 +65,9 @@ export default function HomePage({ indexPageData, services }: HomePageProps) {
             }}
             cards={services.map((service) => {
               return {
-                title: service,
-                link: "/services",
-                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum non optio quisquam dolore tenetur nostrum tempora animi ducimus nam magni.",
+                title: service.title,
+                link: `/tests?code=${service.code}`,
+                text: service.description,
               };
             })}
           />
@@ -115,7 +116,7 @@ export default function HomePage({ indexPageData, services }: HomePageProps) {
 }
 
 // Library
-import { getAllServices } from "../lib/tests";
+import { getAllServices } from "../lib/services";
 import { readIndexPageData } from "../lib/indexPage";
 
 export const getStaticProps: GetStaticProps<HomePageProps> = () => {
