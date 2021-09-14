@@ -4,8 +4,5 @@ headline_detail: Lorem ipsum dolor sit amet consectetur adipisicing elit.
   nostrum perspiciatis pariatur quasi!
 headline_image: /hero/covid19.png
 
-headline_button1_label: Book A Test
-headline_button1_link: /tests
-
-headline_button2_label: Contact Us
-headline_button2_link: /contact
+go_to_tests_page_label: Book A Test
+go_to_contact_page_label: Contact Us

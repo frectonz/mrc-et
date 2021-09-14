@@ -9,11 +9,8 @@ export interface IndexPageData {
   headlineDetail: string;
   headlineImage: string;
 
-  headlineButton1Label: string;
-  headlineButton1Link: string;
-
-  headlineButton2Label: string;
-  headlineButton2Link: string;
+  goToTestsLabel: string;
+  goToContactPageLabel: string;
 }
 
 export const readIndexPageData = (): IndexPageData => {
@@ -26,10 +23,7 @@ export const readIndexPageData = (): IndexPageData => {
     headlineDetail: data.headline_detail,
     headlineImage: data.headline_image,
 
-    headlineButton1Label: data.headline_button1_label,
-    headlineButton1Link: data.headline_button1_link,
-
-    headlineButton2Label: data.headline_button2_label,
-    headlineButton2Link: data.headline_button2_link,
+    goToTestsLabel: data.go_to_tests_page_label,
+    goToContactPageLabel: data.go_to_contact_page_label,
   };
 };
