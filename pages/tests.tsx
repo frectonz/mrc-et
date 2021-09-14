@@ -21,11 +21,15 @@ import {
   AutoCompleteInput,
 } from "@choc-ui/chakra-autocomplete";
 
+// Interfaces
+import { FooterData } from "../interfaces/FooterData";
+
 interface TestsPageProps {
   tests: TestData[];
+  footerData: FooterData;
 }
 
-export default function TestsPage({ tests }: TestsPageProps) {
+export default function TestsPage({ tests, footerData }: TestsPageProps) {
   const { query } = useRouter();
   const [testsList, setTestsList] = useState(tests);
 
@@ -77,7 +81,7 @@ export default function TestsPage({ tests }: TestsPageProps) {
   };
 
   return (
-    <Layout>
+    <Layout footerData={footerData}>
       <Hero
         textColor="white"
         image="/hero/lab.jpg"
@@ -113,9 +117,11 @@ export default function TestsPage({ tests }: TestsPageProps) {
 
 // Library
 import { getAllTests } from "../lib/tests";
+import { readIndexPageData } from "../lib/indexPage";
 
 export const getStaticProps: GetStaticProps<TestsPageProps> = () => {
   const tests = getAllTests();
+  const indexPageData = readIndexPageData();
 
-  return { props: { tests } };
+  return { props: { tests, footerData: indexPageData } };
 };

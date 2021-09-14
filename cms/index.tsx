@@ -51,6 +51,41 @@ const config: CmsConfig = {
               name: "go_to_contact_page_label",
               widget: "string",
             },
+            {
+              label: "Phone",
+              name: "phone",
+              widget: "string",
+            },
+            {
+              label: "Email",
+              name: "email",
+              widget: "string",
+            },
+            {
+              label: "Address",
+              name: "address",
+              widget: "string",
+            },
+            {
+              label: "Twitter",
+              name: "twitter",
+              widget: "string",
+            },
+            {
+              label: "Facebook",
+              name: "facebook",
+              widget: "string",
+            },
+            {
+              label: "Linkedin",
+              name: "linkedin",
+              widget: "string",
+            },
+            {
+              label: "License information",
+              name: "license_information",
+              widget: "text",
+            },
           ],
         },
       ],

@@ -1,5 +1,6 @@
 // NextJS
 import NextLink from "next/link";
+import { GetStaticProps } from "next";
 
 // ChakraUI
 import {
@@ -32,11 +33,16 @@ import MotionBox from "../components/utils/MotionBox";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
 
-// interface ContactProps extends LocationProps, ContactUsProps, FollowUsProps {}
+// Interfaces
+import { FooterData } from "../interfaces/FooterData";
 
-export default function Contact() {
+interface ContactPageProps {
+  footerData: FooterData;
+}
+
+export default function Contact({ footerData }: ContactPageProps) {
   return (
-    <Layout>
+    <Layout footerData={footerData}>
       <MainContainer py={100}>
         <Heading textTransform="uppercase">Get In Touch</Heading>
         <Grid
@@ -176,3 +182,12 @@ function FollowUs({ facebookLink, twitterLink, linkedInLink }: FollowUsProps) {
     </Box>
   );
 }
+
+// Library
+import { readIndexPageData } from "../lib/indexPage";
+
+export const getStaticProps: GetStaticProps<ContactPageProps> = () => {
+  const indexPageData = readIndexPageData();
+
+  return { props: { footerData: indexPageData } };
+};

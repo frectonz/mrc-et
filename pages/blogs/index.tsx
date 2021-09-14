@@ -1,12 +1,22 @@
+// NextJs
+import { GetStaticProps } from "next";
+
 // Components
 import Hero from "../../components/main/Hero";
 import Layout from "../../components/layout/Layout";
 import MainContainer from "../../components/utils/MainContainer";
 import TwoColumnSection from "../../components/main/TwoColumnSection/TwoColumnSection";
 
-export default function Blogs() {
+// Interfaces
+import { FooterData } from "../../interfaces/FooterData";
+
+interface BlogsPage {
+  footerData: FooterData;
+}
+
+export default function Blogs({ footerData }: BlogsPage) {
   return (
-    <Layout>
+    <Layout footerData={footerData}>
       <Hero title="Blogs" text="" image="/hero/lab.jpg" textColor="white" />
       <MainContainer>
         <TwoColumnSection
@@ -38,3 +48,12 @@ export default function Blogs() {
     </Layout>
   );
 }
+
+// Library
+import { readIndexPageData } from "../../lib/indexPage";
+
+export const getStaticProps: GetStaticProps<BlogsPage> = () => {
+  const indexPageData = readIndexPageData();
+
+  return { props: { footerData: indexPageData } };
+};

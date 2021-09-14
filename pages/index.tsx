@@ -33,7 +33,7 @@ export default function HomePage({
   return (
     <>
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-      <Layout>
+      <Layout footerData={indexPageData}>
         <Hero
           textColor="white"
           title={indexPageData.headlineTitle}

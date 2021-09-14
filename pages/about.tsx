@@ -1,12 +1,24 @@
-// Components
+// NextJs
+import { GetStaticProps } from "next";
+
+// ChakraUI
 import { Heading } from "@chakra-ui/react";
+
+// Components
 import Layout from "../components/layout/Layout";
 import BlobCardsList from "../components/main/BlobCards/BlobCardList";
 import MainContainer from "../components/utils/MainContainer";
 
-export default function about() {
+// Interfaces
+import { FooterData } from "../interfaces/FooterData";
+
+interface AboutPageProps {
+  footerData: FooterData;
+}
+
+export default function AboutPage({ footerData }: AboutPageProps) {
   return (
-    <Layout>
+    <Layout footerData={footerData}>
       <MainContainer py={50}>
         <Heading textAlign="center" py={5}>
           MRC-ET Advanced Laboratory
@@ -72,3 +84,12 @@ export default function about() {
     </Layout>
   );
 }
+
+// Library
+import { readIndexPageData } from "../lib/indexPage";
+
+export const getStaticProps: GetStaticProps<AboutPageProps> = () => {
+  const indexPageData = readIndexPageData();
+
+  return { props: { footerData: indexPageData } };
+};

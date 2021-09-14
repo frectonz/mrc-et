@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 // Components
 import Header from "../header";
 import Footer from "../footer/Footer";
+import { FooterData } from "../../interfaces/FooterData";
 
 const logoProps = {
   logoImage: "/logo.png",
@@ -35,9 +36,10 @@ const controlsProps = {
 
 interface LayoutProps {
   children?: ReactNode;
+  footerData: FooterData;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, footerData }: LayoutProps) {
   return (
     <>
       <Header
@@ -48,16 +50,13 @@ export default function Layout({ children }: LayoutProps) {
       {children}
       <Footer
         logoImage="/logo.png"
-        licenseInfo={`Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio quod numquam amet accusantium sed explicabo deserunt
-              fuga vero illo laudantium consectetur, nam perferendis eveniet
-              aspernatur maxime placeat. Ex, porro! Ex!`}
-        telephone="251940170100"
-        email="fraol0912@gmail.com"
-        location="4 killo, Addis Abeba"
-        facebookLink="https://www.facebook.com"
-        twitterLink="https://www.twitter.com"
-        linkedInLink="https://www.linkedin.com"
+        licenseInfo={footerData.licenseInformation}
+        telephone={footerData.phone}
+        email={footerData.email}
+        location={footerData.address}
+        facebookLink={footerData.facebook}
+        twitterLink={footerData.twitter}
+        linkedInLink={footerData.linkedin}
       />
     </>
   );
