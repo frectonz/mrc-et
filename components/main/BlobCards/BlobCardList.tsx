@@ -52,9 +52,9 @@ export default function BlobCardsList({
             return <BlobCard key={i} card={card} showArrow={showArrow} />;
           } else {
             return (
-              <NextLink href={card.link}>
+              <NextLink key={i} href={card.link}>
                 <a>
-                  <BlobCard key={i} card={card} showArrow={showArrow} />
+                  <BlobCard card={card} showArrow={showArrow} />
                 </a>
               </NextLink>
             );
