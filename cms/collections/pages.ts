@@ -93,9 +93,39 @@ const testsPage: CmsCollectionFile = {
   ],
 };
 
+const aboutPage: CmsCollectionFile = {
+  name: "about",
+  label: "About Page",
+  file: "data/pages/about.yml",
+  description: "About page configuration",
+  fields: [
+    {
+      label: "Headline Title",
+      name: "headline_title",
+      widget: "string",
+    },
+    {
+      label: "Headline Detail",
+      name: "headline_detail",
+      widget: "text",
+    },
+    {
+      label: "Aims and Objectives",
+      name: "aims_and_objectives",
+      widget: "list",
+      allow_add: true,
+      summary: "{{aim}}",
+      field: {
+        name: "aim or objective",
+        widget: "string",
+      },
+    },
+  ],
+};
+
 export const pages: CmsCollection = {
   name: "pages",
   label: "Pages",
   delete: false,
-  files: [homePage, testsPage],
+  files: [homePage, testsPage, aboutPage],
 };

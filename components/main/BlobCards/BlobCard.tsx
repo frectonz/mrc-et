@@ -1,6 +1,3 @@
-// NextJs
-import NextLink from "next/link";
-
 // ChakraUI
 import { Text, Stack, HStack, Heading, useBoolean } from "@chakra-ui/react";
 
@@ -21,23 +18,19 @@ export default function BlobCard({ card, showArrow }: CardProps) {
   const [hover, setHover] = useBoolean(false);
 
   return (
-    <NextLink href={card.link}>
-      <a>
-        <MotionBox
-          cursor="pointer"
-          onMouseEnter={setHover.on}
-          onMouseLeave={setHover.off}
-        >
-          <Blob />
-          <Stack p={5} spacing={5} borderRadius="md">
-            <HStack justify="space-between">
-              <Heading size="md">{card.title}</Heading>
-              {showArrow && <ArrowToTheRight hover={hover} />}
-            </HStack>
-            <Text>{card.text}</Text>
-          </Stack>
-        </MotionBox>
-      </a>
-    </NextLink>
+    <MotionBox
+      cursor="pointer"
+      onMouseEnter={setHover.on}
+      onMouseLeave={setHover.off}
+    >
+      <Blob />
+      <Stack p={5} spacing={5} borderRadius="md">
+        <HStack justify="space-between">
+          <Heading size="md">{card.title}</Heading>
+          {showArrow && <ArrowToTheRight hover={hover} />}
+        </HStack>
+        <Text>{card.text}</Text>
+      </Stack>
+    </MotionBox>
   );
 }

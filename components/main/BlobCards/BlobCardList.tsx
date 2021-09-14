@@ -47,9 +47,19 @@ export default function BlobCardsList({
         gap={10}
         templateColumns={["repeat(1, 1fr)", null, `repeat(${columns}, 1fr)`]}
       >
-        {cards.map((card, i) => (
-          <BlobCard key={i} card={card} showArrow={showArrow} />
-        ))}
+        {cards.map((card, i) => {
+          if (card.link === "") {
+            return <BlobCard key={i} card={card} showArrow={showArrow} />;
+          } else {
+            return (
+              <NextLink href={card.link}>
+                <a>
+                  <BlobCard key={i} card={card} showArrow={showArrow} />
+                </a>
+              </NextLink>
+            );
+          }
+        })}
       </Grid>
     </Stack>
   );
