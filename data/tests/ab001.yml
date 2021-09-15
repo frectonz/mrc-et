@@ -1,0 +1,10 @@
+test_code: AB001
+test_name: A B Test
+price_birr: 1000
+method: MLPA
+specimen: the specimen
+specimen_volume: 1 cc
+temperature: test
+frequency: test
+reported_after: test
+test_category: test
