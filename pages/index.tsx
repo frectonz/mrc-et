@@ -97,7 +97,7 @@ export default function HomePage({
             title={latestBlog.title}
             text={latestBlog.detail}
             link={`/blogs/${latestBlog.id}`}
-            linkText="Reade More"
+            linkText="Read More"
             imageLink={latestBlog.image}
           />
         </MainContainer>
