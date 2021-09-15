@@ -1,3 +1,6 @@
+// NextJs
+import NextLink from "next/link";
+
 // ChakraUI
 import { Flex, Spacer, BoxProps } from "@chakra-ui/react";
 
@@ -17,7 +20,11 @@ export default function Controls({
     <Flex {...rest}>
       <ColorModeToggle />
       <Spacer width={5} />
-      <PrimaryButton>{actionButtonLabel}</PrimaryButton>
+      <NextLink href="/tests">
+        <a>
+          <PrimaryButton>{actionButtonLabel}</PrimaryButton>
+        </a>
+      </NextLink>
     </Flex>
   );
 }

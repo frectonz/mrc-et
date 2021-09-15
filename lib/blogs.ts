@@ -3,7 +3,7 @@ import { join } from "path";
 import matter from "gray-matter";
 import { readdirSync, readFileSync } from "fs";
 
-// NDX
+// MDX
 import { serialize } from "next-mdx-remote/serialize";
 
 // Interfaces

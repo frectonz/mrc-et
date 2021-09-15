@@ -13,6 +13,12 @@ import MainContainer from "../components/utils/MainContainer";
 import { AboutPageData } from "../lib/aboutPage";
 import { FooterData } from "../interfaces/FooterData";
 
+// MDX
+import { MDXRemote } from "next-mdx-remote";
+
+// MDX Components
+import { components } from "../components/utils/components";
+
 interface AboutPageProps {
   footerData: FooterData;
   aboutPageData: AboutPageData;
@@ -52,6 +58,10 @@ export default function AboutPage({
           })}
         />
       </MainContainer>
+
+      <MainContainer pb={50}>
+        <MDXRemote {...aboutPageData.content} components={components} />
+      </MainContainer>
     </Layout>
   );
 }
@@ -60,9 +70,9 @@ export default function AboutPage({
 import { readIndexPageData } from "../lib/indexPage";
 import { readAboutPageData } from "../lib/aboutPage";
 
-export const getStaticProps: GetStaticProps<AboutPageProps> = () => {
+export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
   const indexPageData = readIndexPageData();
-  const aboutPageData = readAboutPageData();
+  const aboutPageData = await readAboutPageData();
 
   return { props: { footerData: indexPageData, aboutPageData } };
 };

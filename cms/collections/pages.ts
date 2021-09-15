@@ -96,7 +96,7 @@ const testsPage: CmsCollectionFile = {
 const aboutPage: CmsCollectionFile = {
   name: "about",
   label: "About Page",
-  file: "data/pages/about.yml",
+  file: "data/pages/about.md",
   description: "About page configuration",
   fields: [
     {
@@ -114,12 +114,13 @@ const aboutPage: CmsCollectionFile = {
       name: "aims_and_objectives",
       widget: "list",
       allow_add: true,
-      summary: "{{aim}}",
       field: {
+        label: "Aim or objective",
         name: "aim or objective",
         widget: "string",
       },
     },
+    { label: "About content", name: "body", widget: "markdown" },
   ],
 };
 

@@ -13,7 +13,7 @@ import MainContainer from "../../components/utils/MainContainer";
 import { BlogData } from "../../interfaces/BlogData";
 import { FooterData } from "../../interfaces/FooterData";
 
-// Components
+// MDX Components
 import { components } from "../../components/utils/components";
 
 interface BlogPageProps {
