@@ -1,7 +1,8 @@
+// NextJs
 import NextLink from "next/link";
 
 // ChakraUI
-import { Box, Grid, Heading, Text, Image, BoxProps } from "@chakra-ui/react";
+import { VStack, Grid, Heading, Text, Image, BoxProps } from "@chakra-ui/react";
 
 // Components
 import MotionBox from "../../utils/MotionBox";
@@ -33,7 +34,7 @@ export default function TwoColumnSection({
       <MotionBox my="auto" boxShadow="2xl" borderRadius="2xl">
         <Image borderRadius="2xl" src={imageLink} alt={title} />
       </MotionBox>
-      <Box>
+      <VStack align="flex-start" justify="space-between">
         <Heading size="lg">{title}</Heading>
         <Text my={2}>{text}</Text>
         <NextLink href={link}>
@@ -41,7 +42,7 @@ export default function TwoColumnSection({
             <PrimaryButton>{linkText}</PrimaryButton>
           </a>
         </NextLink>
-      </Box>
+      </VStack>
     </Grid>
   );
 }

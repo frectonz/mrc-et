@@ -44,7 +44,7 @@ export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
         )
       );
     }
-  }, [query, setTestsList]);
+  }, [testsList, query, setTestsList]);
 
   const testCodes = tests.map((test) => {
     return {

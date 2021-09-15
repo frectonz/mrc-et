@@ -4,6 +4,7 @@ import { CmsConfig } from "netlify-cms-core";
 // Collections;
 import { pages } from "./collections/pages";
 import { tests } from "./collections/tests";
+import { blogs } from "./collections/blogs";
 import { services } from "./collections/services";
 import { testimonials } from "./collections/testimonials";
 
@@ -21,7 +22,7 @@ const config: CmsConfig = {
   site_url: "https://mrc-et.netlify.app",
   display_url: "https://mrc-et.netlify.app",
   logo_url: "/logo.png",
-  collections: [pages, tests, services, testimonials],
+  collections: [pages, tests, services, testimonials, blogs],
 };
 
 CMS.init({

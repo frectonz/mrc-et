@@ -8,52 +8,43 @@ import MainContainer from "../../components/utils/MainContainer";
 import TwoColumnSection from "../../components/main/TwoColumnSection/TwoColumnSection";
 
 // Interfaces
+import { BlogData } from "../../interfaces/BlogData";
 import { FooterData } from "../../interfaces/FooterData";
 
 interface BlogsPage {
+  blogs: BlogData[];
   footerData: FooterData;
 }
 
-export default function Blogs({ footerData }: BlogsPage) {
+export default function Blogs({ footerData, blogs }: BlogsPage) {
   return (
     <Layout footerData={footerData}>
       <Hero title="Blogs" text="" image="/hero/lab.jpg" textColor="white" />
       <MainContainer>
-        <TwoColumnSection
-          title="Lorem ipsum dolor sit amet consectetur, adipisicing."
-          text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dignissimos et laborum deleniti, eos tempora! Possimus, earum? Officia odit explicabo laudantium ea ratione sapiente mollitia libero soluta praesentium necessitatibus, architecto tenetur, beatae impedit eaque in voluptatibus iure eius dolorum dolores! Recusandae eius amet debitis qui ad voluptatem nihil explicabo modi!`}
-          link="/services"
-          linkText="Read More"
-          imageLink="/hero/covid19.png"
-        />
-      </MainContainer>
-      <MainContainer>
-        <TwoColumnSection
-          title="Lorem ipsum dolor sit amet consectetur, adipisicing."
-          text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dignissimos et laborum deleniti, eos tempora! Possimus, earum? Officia odit explicabo laudantium ea ratione sapiente mollitia libero soluta praesentium necessitatibus, architecto tenetur, beatae impedit eaque in voluptatibus iure eius dolorum dolores! Recusandae eius amet debitis qui ad voluptatem nihil explicabo modi!`}
-          link="/services"
-          linkText="Read More"
-          imageLink="/hero/covid19.png"
-        />
-      </MainContainer>
-      <MainContainer>
-        <TwoColumnSection
-          title="Lorem ipsum dolor sit amet consectetur, adipisicing."
-          text={`Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dignissimos et laborum deleniti, eos tempora! Possimus, earum? Officia odit explicabo laudantium ea ratione sapiente mollitia libero soluta praesentium necessitatibus, architecto tenetur, beatae impedit eaque in voluptatibus iure eius dolorum dolores! Recusandae eius amet debitis qui ad voluptatem nihil explicabo modi!`}
-          link="/services"
-          linkText="Read More"
-          imageLink="/hero/covid19.png"
-        />
+        {blogs.map((blog, i) => {
+          return (
+            <TwoColumnSection
+              key={i}
+              title={blog.title}
+              text={blog.detail}
+              linkText="Read More"
+              imageLink={blog.image}
+              link={`/blogs/${blog.id}`}
+            />
+          );
+        })}
       </MainContainer>
     </Layout>
   );
 }
 
 // Library
+import { getAllBlogs } from "../../lib/blogs";
 import { readIndexPageData } from "../../lib/indexPage";
 
 export const getStaticProps: GetStaticProps<BlogsPage> = () => {
+  const blogs = getAllBlogs();
   const indexPageData = readIndexPageData();
 
-  return { props: { footerData: indexPageData } };
+  return { props: { footerData: indexPageData, blogs } };
 };
