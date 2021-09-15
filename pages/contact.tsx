@@ -28,6 +28,7 @@ import {
 } from "react-icons/fa";
 
 // Components
+import Map from "../components/utils/Map";
 import Layout from "../components/layout/Layout";
 import MotionBox from "../components/utils/MotionBox";
 import MainContainer from "../components/utils/MainContainer";
@@ -51,16 +52,17 @@ export default function Contact({ footerData }: ContactPageProps) {
           templateColumns={["repeat(1, 1fr)", null, "repeat(2, 1fr)"]}
         >
           <Stack>
-            <Location location="Ethiopia, Addis Ababa, Gerji around Kadisko Hospital." />
-            <ContactUs phone="0940170100" email="fraol0912@gmail.com" />
+            <Location location={footerData.address} />
+            <ContactUs phone={footerData.phone} email={footerData.email} />
             <FollowUs
-              twitterLink="https://twitter.com"
-              facebookLink="https://facebook.com"
-              linkedInLink="https://linkedin.com"
+              twitterLink={footerData.twitter}
+              facebookLink={footerData.facebook}
+              linkedInLink={footerData.linkedin}
             />
           </Stack>
           <ContactForm />
         </Grid>
+        <Map />
       </MainContainer>
     </Layout>
   );
