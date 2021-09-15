@@ -14,7 +14,14 @@ const BLOGS_DIR = join(process.cwd(), "/data/blogs");
 const formatDate = (date: string) => dayjs(date).format("ddd, MMM DD, YYYY");
 
 export function getAllBlogs(): BlogData[] {
-  return readdirSync(BLOGS_DIR).map((testFile) => readBlogFile(testFile));
+  return readdirSync(BLOGS_DIR)
+    .map((testFile) => readBlogFile(testFile))
+    .sort(({ date: a }, { date: b }) => {
+      const dateA = new Date(a).getTime();
+      const dateB = new Date(b).getTime();
+
+      return dateA - dateB;
+    });
 }
 
 export function readBlogFile(testFile: string): BlogData {
