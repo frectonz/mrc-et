@@ -39,12 +39,12 @@ export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
     const code = query?.code;
     if (typeof code === "string") {
       setTestsList(
-        testsList.filter((test) =>
+        tests.filter((test) =>
           test.code.toLowerCase().includes(code.toLowerCase())
         )
       );
     }
-  }, [testsList, query, setTestsList]);
+  }, [tests, query, setTestsList]);
 
   const testCodes = tests.map((test) => {
     return {
