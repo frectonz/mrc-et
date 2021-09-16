@@ -38,9 +38,9 @@ export default function TwoColumnSection({
         <Heading size="lg">{title}</Heading>
         <Text my={2}>{text}</Text>
         <NextLink href={link}>
-          <a>
-            <PrimaryButton>{linkText}</PrimaryButton>
-          </a>
+          <PrimaryButton as="a" title={`Go to ${title} page`}>
+            {linkText}
+          </PrimaryButton>
         </NextLink>
       </VStack>
     </Grid>

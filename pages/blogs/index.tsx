@@ -2,6 +2,7 @@
 import { GetStaticProps } from "next";
 
 // Components
+import Seo from "../../components/utils/Seo";
 import Hero from "../../components/main/Hero";
 import Layout from "../../components/layout/Layout";
 import MainContainer from "../../components/utils/MainContainer";
@@ -18,23 +19,26 @@ interface BlogsPage {
 
 export default function Blogs({ footerData, blogs }: BlogsPage) {
   return (
-    <Layout footerData={footerData}>
-      <Hero title="Blogs" text="" image="/image/lab.jpg" textColor="white" />
-      <MainContainer>
-        {blogs.map((blog, i) => {
-          return (
-            <TwoColumnSection
-              key={i}
-              title={blog.title}
-              text={blog.detail}
-              linkText="Read More"
-              imageLink={blog.image}
-              link={`/blogs/${blog.id}`}
-            />
-          );
-        })}
-      </MainContainer>
-    </Layout>
+    <>
+      <Seo title="Blogs" />
+      <Layout footerData={footerData}>
+        <Hero title="Blogs" text="" image="/image/lab.jpg" textColor="white" />
+        <MainContainer>
+          {blogs.map((blog, i) => {
+            return (
+              <TwoColumnSection
+                key={i}
+                title={blog.title}
+                text={blog.detail}
+                linkText="Read More"
+                imageLink={blog.image}
+                link={`/blogs/${blog.id}`}
+              />
+            );
+          })}
+        </MainContainer>
+      </Layout>
+    </>
   );
 }
 

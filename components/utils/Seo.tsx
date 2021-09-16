@@ -10,6 +10,10 @@ export default function Seo({
   return (
     <Head>
       <title>{title} - MRC-ET</title>
+      <meta
+        name="description"
+        content="MRC-ET is an advanced molecular diagnostics based in Ethiopia."
+      />
     </Head>
   );
 }

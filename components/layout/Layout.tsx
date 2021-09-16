@@ -5,10 +5,6 @@ import Header from "../header";
 import Footer from "../footer/Footer";
 import { FooterData } from "../../interfaces/FooterData";
 
-const logoProps = {
-  logoImage: "/logo.png",
-};
-
 const navProps = {
   links: [
     {
@@ -44,12 +40,11 @@ export default function Layout({ children, footerData }: LayoutProps) {
     <>
       <Header
         links={navProps.links}
-        logoImage={logoProps.logoImage}
         actionButtonLabel={controlsProps.actionButton}
       />
       {children}
       <Footer
-        logoImage="/logo.png"
+        logoImage="/logo.webp"
         licenseInfo={footerData.licenseInformation}
         telephone={footerData.phone}
         email={footerData.email}

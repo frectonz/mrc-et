@@ -11,19 +11,14 @@ import { NavLink } from "../../interfaces/NavLink";
 
 interface HeaderProp {
   links: NavLink[];
-  logoImage: string;
   actionButtonLabel: string;
 }
 
-export default function Header({
-  links,
-  logoImage,
-  actionButtonLabel,
-}: HeaderProp) {
+export default function Header({ links, actionButtonLabel }: HeaderProp) {
   return (
     <MainContainer>
       <Flex py={2} as="header" align="center" justify="space-between">
-        <Logo logoImage={logoImage} />
+        <Logo />
         <Menu links={links} actionButtonLabel={actionButtonLabel} />
       </Flex>
     </MainContainer>
