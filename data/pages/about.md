@@ -1,9 +1,12 @@
 ---
 headline_title: MRC-ET Advanced Laboratory
-headline_detail: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus
-  magnam doloremque corporis velit quas vitae exercitationem nesciunt esse
-  voluptatem doloribus, excepturi quia iure nostrum? Doloremque nostrum ipsa
-  adipisci consequatur placeat.
+headline_detail: MRC-ET is an affiliate of MRC Holland; a Netherlands based
+  Biotechnology Company, which is specialized in production and supply of a
+  proprietary product, MLPA® kits and an assortment of materials needed in a
+  molecular biology facility. The kits, produced by MRC-Holland, are primarily
+  used as diagnostic tools and/or for research purposes, for genetic screening
+  of diverse hereditary disorders and syndromes as well as diseases/conditions
+  that may result as a consequence of various changes in the human genome.
 aims_and_objectives:
   - Introduce a simple and cost efficient genetic screening technique
   - Promote and introduce MLPA® kits as diagnostic and research tools
