@@ -2,7 +2,7 @@ headline_title: Lorem, ipsum dolor.
 headline_detail: Lorem ipsum dolor sit amet consectetur adipisicing elit.
   Aliquid obcaecati deleniti sapiente, placeat tempora quis ad nostrum
   perspiciatis pariatur quasi!
-headline_image: /hero/covid19.png
+headline_image: /image/covid19.webp
 go_to_tests_page_label: Book A Test
 go_to_contact_page_label: Contact Us
 phone: "251940170100"

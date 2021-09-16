@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import { Flex, Spacer, Badge } from "@chakra-ui/react";
 
 // Components
+import Seo from "../components/utils/Seo";
 import Hero from "../components/main/Hero";
 import Layout from "../components/layout/Layout";
 import MainContainer from "../components/utils/MainContainer";
@@ -36,6 +37,7 @@ export default function HomePage({
 }: HomePageProps) {
   return (
     <>
+      <Seo />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <Layout footerData={indexPageData}>
         <Hero

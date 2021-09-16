@@ -12,7 +12,7 @@ interface MenuButtonProps extends ButtonProps {
 
 export function OpenMenuButton({ onClick, ...rest }: MenuButtonProps) {
   return (
-    <Button {...rest} variant="outline" onClick={onClick}>
+    <Button {...rest} title="open menu" variant="outline" onClick={onClick}>
       <HiOutlineMenu fontSize="2rem" />
     </Button>
   );
@@ -20,7 +20,7 @@ export function OpenMenuButton({ onClick, ...rest }: MenuButtonProps) {
 
 export function CloseMenuButton({ onClick, ...rest }: MenuButtonProps) {
   return (
-    <Button {...rest} variant="ghost" onClick={onClick}>
+    <Button {...rest} title="close menu" variant="ghost" onClick={onClick}>
       <HiX fontSize="1.8rem" />
     </Button>
   );

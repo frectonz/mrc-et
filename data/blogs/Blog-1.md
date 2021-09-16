@@ -5,9 +5,10 @@ detail: Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
   explicabo laudantium ea ratione sapiente mollitia libero soluta praesentium
   necessitatibus, architecto tenetur, beatae impedit eaque in voluptatibus iure
   eius dolorum dolores!
-image: /hero/covid19.png
+image: /image/covid19.webp
 date: 2020-08-18
 ---
+
 ## Lorem ipsum dolor
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere possimus
@@ -22,7 +23,7 @@ impedit? Totam debitis esse ea laboriosam adipisci tempora autem iste
 officiis ipsa nobis id dignissimos architecto expedita et, unde soluta
 accusamus repudiandae facere. Non similique pariatur deserunt?
 
-![an image](/hero/lab.jpg "ok")
+![an image](/image/lab.jpg "ok")
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere possimus
 deserunt quo nam distinctio hic voluptatum voluptas voluptatem
@@ -44,14 +45,14 @@ Here is a
 
 ## H2
 
-* first
-* second
-* third
+- first
+- second
+- third
 
-- - -
+---
 
 > My qoute
 
 **bold**
 
-*italic*
+_italic_

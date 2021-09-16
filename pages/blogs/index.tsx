@@ -19,7 +19,7 @@ interface BlogsPage {
 export default function Blogs({ footerData, blogs }: BlogsPage) {
   return (
     <Layout footerData={footerData}>
-      <Hero title="Blogs" text="" image="/hero/lab.jpg" textColor="white" />
+      <Hero title="Blogs" text="" image="/image/lab.jpg" textColor="white" />
       <MainContainer>
         {blogs.map((blog, i) => {
           return (

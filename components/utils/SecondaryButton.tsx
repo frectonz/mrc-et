@@ -17,7 +17,7 @@ export default function SecondaryButton({
       <Button
         {...rest}
         bg="#3fa1ec"
-        color="white"
+        color="black"
         variant="solid"
         _hover={{
           bg: "#3fa1ec",

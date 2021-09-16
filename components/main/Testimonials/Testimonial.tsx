@@ -39,7 +39,11 @@ export default function TestimonialCard({ testimonial }: TestimonialProps) {
         {testimonial.testimonial}
       </Text>
       <Flex align="center">
-        <Avatar src={testimonial.personImage} />
+        <Avatar
+          src={testimonial.personImage}
+          name={testimonial.personTitle}
+          title={`${testimonial.personTitle} image`}
+        />
         <Box ml={5}>
           <Heading size="sm">{testimonial.personTitle}</Heading>
           <Text>{testimonial.personSubtitle}</Text>

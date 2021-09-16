@@ -5,7 +5,7 @@ detail: Lorem ipsum dolor sit amet consectetur adipisicing elit.
   Officia odit explicabo laudantium ea ratione sapiente mollitia libero
   soluta praesentium necessitatibus, architecto tenetur, beatae impedit
   eaque in voluptatibus iure eius dolorum dolores!
-image: /hero/covid19.png
+image: /image/covid19.webp
 date: "2020-08-18"
 ---
 
@@ -13,7 +13,7 @@ date: "2020-08-18"
 
 This is a Blog
 
-![an image](/hero/lab.jpg)
+![an image](/image/lab.jpg)
 
 Here is a
 

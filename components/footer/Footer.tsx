@@ -73,17 +73,17 @@ export default function Footer({
               </Heading>
               <HStack>
                 <MotionBox cursor="pointer">
-                  <a href={facebookLink}>
+                  <a title="Facebook" href={facebookLink}>
                     <FaFacebook fontSize="1.3rem" />
                   </a>
                 </MotionBox>
                 <MotionBox cursor="pointer">
-                  <a href={twitterLink}>
+                  <a title="Twitter" href={twitterLink}>
                     <FaTwitter fontSize="1.3rem" />
                   </a>
                 </MotionBox>
                 <MotionBox cursor="pointer">
-                  <a href={linkedInLink}>
+                  <a title="LinkedIn" href={linkedInLink}>
                     <FaLinkedinIn fontSize="1.3rem" />
                   </a>
                 </MotionBox>

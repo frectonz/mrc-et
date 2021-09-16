@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { TestData } from "../interfaces/Test";
 
 // Components
+import Seo from "../components/utils/Seo";
 import Hero from "../components/main/Hero";
 import Layout from "../components/layout/Layout";
 import TestsList from "../components/tests/TestsList";
@@ -83,37 +84,40 @@ export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
   };
 
   return (
-    <Layout footerData={footerData}>
-      <Hero
-        textColor="white"
-        image={hero.headlineImage}
-        title={hero.headlineTitle}
-        text={hero.headlineDetail}
-      />
-      <MainContainer my={30}>
-        <AutoComplete onChange={handleChange}>
-          <AutoCompleteInput
-            autoComplete="none"
-            placeholder="Type in a test code or test name. Click enter to search"
-          />
-          <AutoCompleteList>
-            {options.map((option, oid) => (
-              <AutoCompleteItem
-                id={`opt-${oid}`}
-                key={`opt-${oid}`}
-                value={option.value}
-              >
-                {option.label}
-              </AutoCompleteItem>
-            ))}
-          </AutoCompleteList>
-        </AutoComplete>
-      </MainContainer>
+    <>
+      <Seo title="Tests" />
+      <Layout footerData={footerData}>
+        <Hero
+          textColor="white"
+          image={hero.headlineImage}
+          title={hero.headlineTitle}
+          text={hero.headlineDetail}
+        />
+        <MainContainer my={30}>
+          <AutoComplete onChange={handleChange}>
+            <AutoCompleteInput
+              autoComplete="none"
+              placeholder="Type in a test code or test name. Click enter to search"
+            />
+            <AutoCompleteList>
+              {options.map((option, oid) => (
+                <AutoCompleteItem
+                  id={`opt-${oid}`}
+                  key={`opt-${oid}`}
+                  value={option.value}
+                >
+                  {option.label}
+                </AutoCompleteItem>
+              ))}
+            </AutoCompleteList>
+          </AutoComplete>
+        </MainContainer>
 
-      <MainContainer>
-        <TestsList tests={testsList} />
-      </MainContainer>
-    </Layout>
+        <MainContainer>
+          <TestsList tests={testsList} />
+        </MainContainer>
+      </Layout>
+    </>
   );
 }
 
