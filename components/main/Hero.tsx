@@ -35,10 +35,10 @@ export default function Hero({
       color={textColor}
       {...background}
     >
-      <Heading as="h1" textShadow="2xl">
+      <Heading as="h1" textShadow="2xl" textAlign="center">
         {title}
       </Heading>
-      <Text maxWidth="45ch" align="center">
+      <Text maxWidth="45ch" align="center" textAlign="center">
         {text}
       </Text>
       {children}
