@@ -5,6 +5,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // Components
+import Seo from "../../components/utils/Seo";
 import Hero from "../../components/main/Hero";
 import Layout from "../../components/layout/Layout";
 import MainContainer from "../../components/utils/MainContainer";
@@ -28,17 +29,20 @@ export default function BlogPage({
   serializedContent,
 }: BlogPageProps) {
   return (
-    <Layout footerData={footerData}>
-      <Hero
-        textColor="white"
-        image={blogData.image}
-        title={blogData.title}
-        text={blogData.detail}
-      />
-      <MainContainer py={100}>
-        <MDXRemote {...serializedContent} components={components} />
-      </MainContainer>
-    </Layout>
+    <>
+      <Seo title={blogData.title} />
+      <Layout footerData={footerData}>
+        <Hero
+          textColor="white"
+          image={blogData.image}
+          title={blogData.title}
+          text={blogData.detail}
+        />
+        <MainContainer py={100}>
+          <MDXRemote {...serializedContent} components={components} />
+        </MainContainer>
+      </Layout>
+    </>
   );
 }
 
