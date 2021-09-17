@@ -8,6 +8,10 @@ import { FooterData } from "../../interfaces/FooterData";
 const navProps = {
   links: [
     {
+      name: "Home",
+      href: "/",
+    },
+    {
       name: "Tests",
       href: "/tests",
     },
