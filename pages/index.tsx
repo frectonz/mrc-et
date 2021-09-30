@@ -69,7 +69,7 @@ export default function HomePage({
 
         <MainContainer>
           <BlobCardList
-            columns={2}
+            columns={3}
             listLabel="services"
             link={{
               text: "Go to tests",
