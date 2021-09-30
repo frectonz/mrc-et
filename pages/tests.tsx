@@ -4,35 +4,33 @@ import { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 
-// Interfaces
-import { TestData } from "../interfaces/Test";
-
 // Components
 import Seo from "../components/utils/Seo";
 import Hero from "../components/main/Hero";
 import Layout from "../components/layout/Layout";
 import TestsList from "../components/tests/TestsList";
 import MainContainer from "../components/utils/MainContainer";
-
-// AutoComplete
-import {
-  AutoComplete,
-  AutoCompleteItem,
-  AutoCompleteList,
-  AutoCompleteInput,
-} from "@choc-ui/chakra-autocomplete";
+import TestsSearchInput from "../components/utils/TestsSearchInput";
 
 // Interfaces
+import { TestData } from "../interfaces/Test";
 import { TestsPageData } from "../lib/testsPage";
 import { FooterData } from "../interfaces/FooterData";
+import { ServiceData } from "../interfaces/ServiceData";
 
 interface TestsPageProps {
   tests: TestData[];
   hero: TestsPageData;
   footerData: FooterData;
+  services: ServiceData[];
 }
 
-export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
+export default function Tests({
+  hero,
+  tests,
+  services,
+  footerData,
+}: TestsPageProps) {
   const { query } = useRouter();
   const [testsList, setTestsList] = useState(tests);
 
@@ -47,29 +45,6 @@ export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
     }
   }, [tests, query, setTestsList]);
 
-  const testCodes = tests.map((test) => {
-    return {
-      value: test.code,
-      label: test.code,
-    };
-  });
-
-  const testNames = tests.map((test) => {
-    return {
-      value: test.name,
-      label: test.name,
-    };
-  });
-
-  const options = [
-    {
-      value: "",
-      label: "",
-    },
-    ...testCodes,
-    ...testNames,
-  ];
-
   const handleChange = (searchStr: any) => {
     if (typeof searchStr === "string") {
       setTestsList(
@@ -83,6 +58,8 @@ export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
     }
   };
 
+  const service = services.find((service) => service.code === query?.code);
+
   return (
     <>
       <Seo title="Tests" />
@@ -90,27 +67,11 @@ export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
         <Hero
           textColor="white"
           image={hero.headlineImage}
-          title={hero.headlineTitle}
-          text={hero.headlineDetail}
+          title={(service && service.title) || hero.headlineTitle}
+          text={(service && service.description) || hero.headlineDetail}
         />
         <MainContainer my={30}>
-          <AutoComplete onChange={handleChange}>
-            <AutoCompleteInput
-              autoComplete="none"
-              placeholder="Type in a test code or test name. Click enter to search"
-            />
-            <AutoCompleteList>
-              {options.map((option, oid) => (
-                <AutoCompleteItem
-                  id={`opt-${oid}`}
-                  key={`opt-${oid}`}
-                  value={option.value}
-                >
-                  {option.label}
-                </AutoCompleteItem>
-              ))}
-            </AutoCompleteList>
-          </AutoComplete>
+          <TestsSearchInput tests={tests} onChange={handleChange} />
         </MainContainer>
 
         <MainContainer>
@@ -123,13 +84,17 @@ export default function TestsPage({ tests, footerData, hero }: TestsPageProps) {
 
 // Library
 import { getAllTests } from "../lib/tests";
+import { getAllServices } from "../lib/services";
 import { readIndexPageData } from "../lib/indexPage";
 import { readTestsPageData } from "../lib/testsPage";
 
 export const getStaticProps: GetStaticProps<TestsPageProps> = () => {
   const tests = getAllTests();
+  const services = getAllServices();
   const indexPageData = readIndexPageData();
   const testsPageData = readTestsPageData();
 
-  return { props: { tests, footerData: indexPageData, hero: testsPageData } };
+  return {
+    props: { tests, footerData: indexPageData, hero: testsPageData, services },
+  };
 };
