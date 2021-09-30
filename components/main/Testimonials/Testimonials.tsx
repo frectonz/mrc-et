@@ -13,11 +13,7 @@ interface TestimonialsProps {
 
 export default function Testimonials({ testimonials }: TestimonialsProps) {
   return (
-    <Grid
-      py={50}
-      gap={5}
-      templateColumns={["repeat(1, 1fr)", null, null, "repeat(3, 1fr)"]}
-    >
+    <Grid py={50} gap={5}>
       {testimonials.map((testimonial, i) => (
         <TestimonialCard key={i} testimonial={testimonial} />
       ))}

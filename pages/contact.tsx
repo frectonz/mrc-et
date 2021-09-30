@@ -76,7 +76,7 @@ function ContactForm() {
   return (
     <Box>
       <Heading size="md" my={2}>
-        Contact Form
+        Contact Us
       </Heading>
       <InputGroup my={5}>
         <InputLeftElement pointerEvents="none">

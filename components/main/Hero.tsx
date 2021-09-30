@@ -38,7 +38,7 @@ export default function Hero({
       <Heading as="h1" textShadow="2xl" textAlign="center">
         {title}
       </Heading>
-      <Text maxWidth="45ch" align="center" textAlign="center">
+      <Text maxWidth="65ch" align="center" textAlign="center">
         {text}
       </Text>
       {children}
