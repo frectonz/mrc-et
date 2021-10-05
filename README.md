@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MRC-ET
 
-## Getting Started
+MRC-ET Advanced Laboratory a molecular diagnostic research laboratory center in Ethiopia Established in 2012 GC and became operational in 2014 GC
 
-First, run the development server:
+![MRC-ET logo](/public/logo.webp)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This is the code repository for the website.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Hosting
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+[Hosted at netlify](https://mrc-et.netlify.app)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Technologies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- UI => [Chakra UI](https://chakra-ui.com)
 
-## Learn More
+  - Icons => [react-icons](https://www.npmjs.com/package/react-icons)
+  - Autocomplete => [Choc UI Autocomplete](https://choc-ui.tech/docs/packages/autocomplete)
 
-To learn more about Next.js, take a look at the following resources:
+- Data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - [MDX](https://mdxjs.com/)
+  - [yaml](https://www.npmjs.com/package/yaml)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- CMS
+  - [Netlify CMS](https://www.netlifycms.org/)
