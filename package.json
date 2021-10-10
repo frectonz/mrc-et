@@ -10,7 +10,7 @@
     "build:next": "next build",
     "clean": "rm -rf .next build out public/admin.js",
     "build:all": "yarn build:cms && yarn build:next && yarn export",
-    "build:cms": "esbuild cms/index.tsx --bundle --outfile=public/admin.js"
+    "build:cms": "esbuild cms/index.ts --bundle --outfile=public/admin.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
