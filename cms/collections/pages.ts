@@ -1,4 +1,4 @@
-import { CmsCollection, CmsCollectionFile } from "netlify-cms-core";
+import type { CmsCollection, CmsCollectionFile } from "netlify-cms-core";
 
 const homePage: CmsCollectionFile = {
   name: "home",

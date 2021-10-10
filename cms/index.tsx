@@ -1,5 +1,5 @@
 import CMS from "netlify-cms-app";
-import { CmsConfig } from "netlify-cms-core";
+import type { CmsConfig } from "netlify-cms-core";
 
 // Collections;
 import { pages } from "./collections/pages";
