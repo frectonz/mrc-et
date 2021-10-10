@@ -17,14 +17,12 @@ interface TestsTemplateProps {
   seoTitle: string;
   tests: TestData[];
   hero: TestsPageData;
-  footerData: FooterData;
 }
 
 export default function TestsTemplate({
   hero,
   tests,
   seoTitle,
-  footerData,
 }: TestsTemplateProps) {
   const [testsList, setTestsList] = useState(tests);
 
@@ -49,21 +47,20 @@ export default function TestsTemplate({
   return (
     <>
       <Seo title={seoTitle} />
-      <Layout footerData={footerData}>
-        <Hero
-          textColor="white"
-          image={hero.headlineImage}
-          title={hero.headlineTitle}
-          text={hero.headlineDetail}
-        />
-        <MainContainer my={30}>
-          <TestsSearchInput tests={tests} onChange={handleChange} />
-        </MainContainer>
 
-        <MainContainer>
-          <TestsList tests={testsList} />
-        </MainContainer>
-      </Layout>
+      <Hero
+        textColor="white"
+        image={hero.headlineImage}
+        title={hero.headlineTitle}
+        text={hero.headlineDetail}
+      />
+      <MainContainer my={30}>
+        <TestsSearchInput tests={tests} onChange={handleChange} />
+      </MainContainer>
+
+      <MainContainer>
+        <TestsList tests={testsList} />
+      </MainContainer>
     </>
   );
 }

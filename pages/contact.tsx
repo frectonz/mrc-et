@@ -30,7 +30,6 @@ import {
 // Components
 import Seo from "../components/utils/Seo";
 import Map from "../components/utils/Map";
-import Layout from "../components/layout/Layout";
 import MotionBox from "../components/utils/MotionBox";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
@@ -46,28 +45,26 @@ export default function Contact({ footerData }: ContactPageProps) {
   return (
     <>
       <Seo title="Contact Us" />
-      <Layout footerData={footerData}>
-        <MainContainer py={100}>
-          <Heading textTransform="uppercase">Get In Touch</Heading>
-          <Grid
-            my={5}
-            gap={10}
-            templateColumns={["repeat(1, 1fr)", null, "repeat(2, 1fr)"]}
-          >
-            <Stack>
-              <Location location={footerData.address} />
-              <ContactUs phone={footerData.phone} email={footerData.email} />
-              <FollowUs
-                twitterLink={footerData.twitter}
-                facebookLink={footerData.facebook}
-                linkedInLink={footerData.linkedin}
-              />
-            </Stack>
-            <ContactForm />
-          </Grid>
-          <Map />
-        </MainContainer>
-      </Layout>
+      <MainContainer py={100}>
+        <Heading textTransform="uppercase">Get In Touch</Heading>
+        <Grid
+          my={5}
+          gap={10}
+          templateColumns={["repeat(1, 1fr)", null, "repeat(2, 1fr)"]}
+        >
+          <Stack>
+            <Location location={footerData.address} />
+            <ContactUs phone={footerData.phone} email={footerData.email} />
+            <FollowUs
+              twitterLink={footerData.twitter}
+              facebookLink={footerData.facebook}
+              linkedInLink={footerData.linkedin}
+            />
+          </Stack>
+          <ContactForm />
+        </Grid>
+        <Map />
+      </MainContainer>
     </>
   );
 }

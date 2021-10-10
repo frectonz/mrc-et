@@ -4,7 +4,6 @@ import { GetStaticProps, GetStaticPaths } from "next";
 // Interfaces
 import { TestData } from "../../interfaces/Test";
 import { TestsPageData } from "../../lib/testsPage";
-import { FooterData } from "../../interfaces/FooterData";
 import { ServiceData } from "../../interfaces/ServiceData";
 
 // Templates
@@ -13,28 +12,20 @@ import TestsTemplate from "../../templates/TestsTemplate";
 interface TestsOfAServicePageProps {
   tests: TestData[];
   hero: TestsPageData;
-  footerData: FooterData;
 }
 
 export default function TestsOfAServicePage({
   hero,
   tests,
-  footerData,
 }: TestsOfAServicePageProps) {
   return (
-    <TestsTemplate
-      hero={hero}
-      tests={tests}
-      footerData={footerData}
-      seoTitle={hero.headlineTitle}
-    />
+    <TestsTemplate hero={hero} tests={tests} seoTitle={hero.headlineTitle} />
   );
 }
 
 // Library
 import { getAllTests } from "../../lib/tests";
 import { readTestsPageData } from "../../lib/testsPage";
-import { readIndexPageData } from "../../lib/indexPage";
 import { getAllServices, readServiceFile } from "../../lib/services";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -57,7 +48,7 @@ export const getStaticProps: GetStaticProps<TestsOfAServicePageProps> = async ({
 }) => {
   let tests = getAllTests();
   const testsPageData = readTestsPageData();
-  const indexPageData = readIndexPageData();
+
   let serviceData: ServiceData = {
     code: "",
     description: "",
@@ -74,7 +65,6 @@ export const getStaticProps: GetStaticProps<TestsOfAServicePageProps> = async ({
   return {
     props: {
       tests,
-      footerData: indexPageData,
       hero: {
         headlineTitle: serviceData.title || testsPageData.headlineTitle,
         headlineImage: testsPageData.headlineImage,
