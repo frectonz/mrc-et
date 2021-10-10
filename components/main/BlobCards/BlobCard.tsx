@@ -1,5 +1,12 @@
 // ChakraUI
-import { Text, Stack, HStack, Heading, useBoolean } from "@chakra-ui/react";
+import {
+  Text,
+  Stack,
+  Image,
+  HStack,
+  Heading,
+  useBoolean,
+} from "@chakra-ui/react";
 
 // Components
 import Blob from "./Blob";
@@ -26,7 +33,10 @@ export default function BlobCard({ card, showArrow }: CardProps) {
       <Blob />
       <Stack p={5} spacing={5} borderRadius="md">
         <HStack justify="space-between">
-          <Heading size="md">{card.title}</Heading>
+          <Image width="14" src={card.image} />
+          <Heading size="md" textAlign="right">
+            {card.title}
+          </Heading>
           {showArrow && <ArrowToTheRight hover={hover} />}
         </HStack>
         <Text>{card.text}</Text>

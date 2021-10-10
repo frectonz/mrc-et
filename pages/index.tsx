@@ -76,6 +76,7 @@ export default function HomePage({
           cards={services.map((service) => {
             return {
               title: service.title,
+              image: service.image,
               text: service.description,
               link: `/tests/${service.title}`,
             };
