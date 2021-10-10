@@ -50,6 +50,7 @@ export default function AboutPage({ aboutPageData }: AboutPageProps) {
               title: aim,
               link: "",
               text: "",
+              image: "",
             };
           })}
         />
