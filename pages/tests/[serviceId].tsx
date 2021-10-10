@@ -51,6 +51,7 @@ export const getStaticProps: GetStaticProps<TestsOfAServicePageProps> = async ({
 
   let serviceData: ServiceData = {
     code: "",
+    image: "",
     description: "",
     title: params?.serviceId as string,
   };

@@ -33,7 +33,7 @@ export default function BlobCard({ card, showArrow }: CardProps) {
       <Blob />
       <Stack p={5} spacing={5} borderRadius="md">
         <HStack justify="space-between">
-          <Image width="14" src={card.image} />
+          <Image width="14" src={card.image} alt={card.title} />
           <Heading size="md">{card.title}</Heading>
           {showArrow && <ArrowToTheRight hover={hover} />}
         </HStack>
