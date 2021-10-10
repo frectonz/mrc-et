@@ -78,8 +78,8 @@ export default function HomePage({
             cards={services.map((service) => {
               return {
                 title: service.title,
-                link: `/tests?code=${service.code}`,
                 text: service.description,
+                link: `/tests/${service.title}`,
               };
             })}
           />

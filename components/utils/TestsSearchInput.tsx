@@ -32,14 +32,7 @@ export default function TestsSearchInput({
     };
   });
 
-  const options = [
-    {
-      value: "",
-      label: "",
-    },
-    ...testCodes,
-    ...testNames,
-  ];
+  const options = [{ value: "", label: "" }, ...testCodes, ...testNames];
 
   return (
     <AutoComplete onChange={onChange}>
