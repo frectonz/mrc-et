@@ -1,9 +1,8 @@
 import { join } from "path";
-import { parse } from "yaml";
 import { readFileSync } from "fs";
 import { FooterData } from "../interfaces/FooterData";
 
-const indexPage = join(process.cwd(), "data", "pages", "index.yml");
+const indexPage = join(process.cwd(), "data", "pages", "index.json");
 
 export interface IndexPageData extends FooterData {
   headlineTitle: string;
@@ -17,7 +16,7 @@ export interface IndexPageData extends FooterData {
 export const readIndexPageData = (): IndexPageData => {
   const content = readFileSync(indexPage, "utf-8");
 
-  const data = parse(content);
+  const data = JSON.parse(content);
 
   return {
     headlineTitle: data.headline_title,

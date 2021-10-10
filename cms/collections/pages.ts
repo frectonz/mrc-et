@@ -3,7 +3,7 @@ import type { CmsCollection, CmsCollectionFile } from "netlify-cms-core";
 const homePage: CmsCollectionFile = {
   name: "home",
   label: "Home",
-  file: "data/pages/index.yml",
+  file: "data/pages/index.json",
   description: "Home page configuration",
   fields: [
     {
