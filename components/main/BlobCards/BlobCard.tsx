@@ -6,6 +6,7 @@ import {
   HStack,
   Heading,
   useBoolean,
+  useColorMode,
 } from "@chakra-ui/react";
 
 // Components
@@ -22,7 +23,10 @@ interface CardProps {
 }
 
 export default function BlobCard({ card, showArrow }: CardProps) {
+  const { colorMode } = useColorMode();
   const [hover, setHover] = useBoolean(false);
+
+  const filter = colorMode === "light" ? "" : "invert(100%)";
 
   return (
     <MotionBox
@@ -33,7 +37,7 @@ export default function BlobCard({ card, showArrow }: CardProps) {
       <Blob />
       <Stack p={5} spacing={5} borderRadius="md">
         <HStack justify="space-between">
-          <Image width="14" src={card.image} alt={card.title} />
+          <Image width="14" src={card.image} alt={card.title} filter={filter} />
           <Heading size="md">{card.title}</Heading>
           {showArrow && <ArrowToTheRight hover={hover} />}
         </HStack>
