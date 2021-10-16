@@ -3,12 +3,10 @@ import { useState } from "react";
 // Interfaces
 import { TestData } from "../interfaces/Test";
 import { TestsPageData } from "../lib/testsPage";
-import { FooterData } from "../interfaces/FooterData";
 
 // Components
 import Seo from "../components/utils/Seo";
 import Hero from "../components/main/Hero";
-import Layout from "../components/layout/Layout";
 import TestsList from "../components/tests/TestsList";
 import MainContainer from "../components/utils/MainContainer";
 import TestsSearchInput from "../components/utils/TestsSearchInput";
