@@ -24,6 +24,12 @@ export const services: CmsCollection = {
       hint: "The name of the service.",
     },
     {
+      label: "Service Image",
+      name: "image",
+      widget: "image",
+      hint: "The icon for the service.",
+    },
+    {
       label: "Service",
       name: "description",
       widget: "text",
