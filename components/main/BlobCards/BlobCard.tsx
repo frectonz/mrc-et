@@ -30,7 +30,7 @@ export default function BlobCard({ card, showArrow }: CardProps) {
 
   return (
     <MotionBox
-      cursor="pointer"
+      cursor={card.link === "" ? "default" : "pointer"}
       onMouseEnter={setHover.on}
       onMouseLeave={setHover.off}
     >
