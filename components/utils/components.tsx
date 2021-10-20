@@ -40,7 +40,9 @@ const h5 = ({ children }: { children: any }) => (
 const img = ({ src, alt, title }: { src: any; alt: any; title: any }) => (
   <>
     <Image py={2} src={src} alt={alt} />
-    <Text pb={2}>{title}</Text>
+    <Text pb={2} as="span">
+      {title}
+    </Text>
   </>
 );
 const a = ({ children, ...props }: { children: any }) => (
