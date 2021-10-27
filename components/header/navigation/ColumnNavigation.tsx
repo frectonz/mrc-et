@@ -5,8 +5,8 @@ import NextLink from "next/link";
 import { Box, Flex, VStack, Divider, useBoolean } from "@chakra-ui/react";
 
 // Interfaces
-import { NavLink } from "../../../interfaces/NavLink";
 import { NavigationProps } from "./Navigation";
+import { NavLink } from "../../../interfaces/NavLink";
 
 // Components
 import ArrowToTheRight from "../../utils/ArrowToTheRight";

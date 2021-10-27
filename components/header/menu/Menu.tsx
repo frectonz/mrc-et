@@ -2,8 +2,8 @@
 import { Box, useDisclosure, useBreakpointValue } from "@chakra-ui/react";
 
 // Components
-import Controls from "../controls/Controls";
 import MenuDrawer from "./MenuDrawer";
+import Controls from "../controls/Controls";
 import { OpenMenuButton } from "./MenuButton";
 import { Navigation } from "../navigation/Navigation";
 import { ColumnNavigation } from "../navigation/ColumnNavigation";
@@ -31,7 +31,7 @@ export default function Menu({ links, actionButtonLabel }: MenuProps) {
     <>
       <OpenMenuButton onClick={onOpen} />
       <MenuDrawer isOpen={isOpen} onClose={onClose}>
-        <Box>
+        <Box pb={5}>
           <Controls actionButtonLabel={actionButtonLabel} />
         </Box>
         <ColumnNavigation links={links} />

@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+
+// Chakra UI
 import {
   Drawer,
   Heading,
@@ -5,7 +8,6 @@ import {
   DrawerHeader,
   DrawerContent,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
 
 import { CloseMenuButton } from "./MenuButton";
 
@@ -22,7 +24,7 @@ export default function MenuDrawer({
 }: MenuDrawerProps) {
   return (
     <Drawer isOpen={isOpen} onClose={onClose} size="full" placement="bottom">
-      <DrawerContent py={5}>
+      <DrawerContent pt={100}>
         <DrawerHeader display="flex" justifyContent="space-between">
           <Heading size="md" lineHeight="2.5rem">
             Menu
