@@ -6,8 +6,8 @@ import { Heading } from "@chakra-ui/react";
 
 // Components
 import Seo from "../components/utils/Seo";
+import CardsList from "../components/main/Cards/CardList";
 import MainContainer from "../components/utils/MainContainer";
-import BlobCardsList from "../components/main/BlobCards/BlobCardList";
 
 // Interfaces
 import { AboutPageData } from "../lib/aboutPage";
@@ -42,7 +42,8 @@ export default function AboutPage({ aboutPageData }: AboutPageProps) {
       </MainContainer>
 
       <MainContainer>
-        <BlobCardsList
+        <CardsList
+          showBlob={true}
           showArrow={false}
           listLabel="aims and objectives"
           cards={aboutPageData.aims.map((aim) => {

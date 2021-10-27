@@ -5,7 +5,7 @@ import NextLink from "next/link";
 import { Flex, Grid, Stack, Badge } from "@chakra-ui/react";
 
 // Components
-import BlobCard from "./BlobCard";
+import Card from "./Card";
 import PrimaryButton from "../../utils/PrimaryButton";
 
 // Interfaces
@@ -19,6 +19,7 @@ interface ServicesProps {
   };
   cards: CardData[];
   showArrow?: boolean;
+  showBlob?: boolean;
   columns?: number;
 }
 
@@ -27,6 +28,7 @@ export default function BlobCardsList({
   listLabel,
   link,
   showArrow = true,
+  showBlob = false,
   columns = 3,
 }: ServicesProps) {
   return (
@@ -49,12 +51,19 @@ export default function BlobCardsList({
       >
         {cards.map((card, i) => {
           if (card.link === "") {
-            return <BlobCard key={i} card={card} showArrow={showArrow} />;
+            return (
+              <Card
+                key={i}
+                card={card}
+                showBlob={showBlob}
+                showArrow={showArrow}
+              />
+            );
           } else {
             return (
               <NextLink key={i} href={card.link}>
                 <a>
-                  <BlobCard card={card} showArrow={showArrow} />
+                  <Card card={card} showArrow={showArrow} showBlob={showBlob} />
                 </a>
               </NextLink>
             );

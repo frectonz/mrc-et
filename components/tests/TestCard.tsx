@@ -1,10 +1,3 @@
-// Components
-import PrimaryButton from "../utils/PrimaryButton";
-import ArrowToTheRight from "../utils/ArrowToTheRight";
-
-// Interfaces
-import { TestData } from "../../interfaces/Test";
-
 // ChakraUI
 import {
   Tr,
@@ -14,9 +7,14 @@ import {
   Table,
   Tbody,
   Heading,
-  useBoolean,
   useBreakpointValue,
 } from "@chakra-ui/react";
+
+// Interfaces
+import { TestData } from "../../interfaces/Test";
+
+// Components
+import PrimaryButton from "../utils/PrimaryButton";
 
 interface TestCardProps {
   test: TestData;

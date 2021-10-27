@@ -9,10 +9,10 @@ import { Flex, Spacer, Badge } from "@chakra-ui/react";
 // Components
 import Seo from "../components/utils/Seo";
 import Hero from "../components/main/Hero";
+import CardList from "../components/main/Cards/CardList";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
 import SecondaryButton from "../components/utils/SecondaryButton";
-import BlobCardList from "../components/main/BlobCards/BlobCardList";
 import Testimonials from "../components/main/Testimonials/Testimonials";
 import TwoColumnSection from "../components/main/TwoColumnSection/TwoColumnSection";
 
@@ -66,7 +66,7 @@ export default function HomePage({
       </Hero>
 
       <MainContainer>
-        <BlobCardList
+        <CardList
           columns={3}
           listLabel="services"
           link={{

@@ -1,8 +1,8 @@
-// Components
-import TestCard from "./TestCard";
-
 // ChakraUI
 import { Divider, Stack } from "@chakra-ui/react";
+
+// Components
+import TestCard from "./TestCard";
 
 // Interfaces
 import { TestData } from "../../interfaces/Test";

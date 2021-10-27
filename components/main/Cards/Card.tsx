@@ -19,24 +19,26 @@ import { CardData } from "../../../interfaces/CardData";
 
 interface CardProps {
   card: CardData;
+  showBlob: boolean;
   showArrow: boolean;
 }
 
-export default function BlobCard({ card, showArrow }: CardProps) {
+export default function Card({ card, showArrow, showBlob }: CardProps) {
   const { colorMode } = useColorMode();
   const [hover, setHover] = useBoolean(false);
 
   const filter = colorMode === "light" ? "" : "invert(100%)";
+  const cursor = card.link === "" ? "default" : "pointer";
 
   return (
     <MotionBox
-      cursor={card.link === "" ? "default" : "pointer"}
+      cursor={cursor}
       onMouseEnter={setHover.on}
       onMouseLeave={setHover.off}
     >
-      <Blob />
+      {showBlob && <Blob />}
       <Stack p={5} spacing={5} borderRadius="md">
-        <HStack justify="space-between">
+        <HStack spacing={5} justify="space-between">
           {card.image && (
             <Image
               width="14"
