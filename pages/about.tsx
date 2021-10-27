@@ -4,19 +4,14 @@ import { GetStaticProps } from "next";
 // ChakraUI
 import { Heading } from "@chakra-ui/react";
 
-// Components
-import Seo from "../components/utils/Seo";
-import CardsList from "../components/main/Cards/CardList";
-import MainContainer from "../components/utils/MainContainer";
-
 // Interfaces
 import { AboutPageData } from "../lib/aboutPage";
 
-// MDX
-import { MDXRemote } from "next-mdx-remote";
-
-// MDX Components
-import { components } from "../components/utils/components";
+// Components
+import Seo from "../components/utils/Seo";
+import CardsList from "../components/main/Cards/CardList";
+import MarkdownDisplay from "../components/MarkdownDisplay";
+import MainContainer from "../components/utils/MainContainer";
 
 interface AboutPageProps {
   aboutPageData: AboutPageData;
@@ -58,7 +53,7 @@ export default function AboutPage({ aboutPageData }: AboutPageProps) {
       </MainContainer>
 
       <MainContainer pb={50}>
-        <MDXRemote {...aboutPageData.content} components={components} />
+        <MarkdownDisplay content={aboutPageData.content} />
       </MainContainer>
     </>
   );

@@ -2,18 +2,15 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 
 // MDX
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+
+// Interfaces
+import { BlogData } from "../../interfaces/BlogData";
 
 // Components
 import Seo from "../../components/utils/Seo";
 import Hero from "../../components/main/Hero";
 import MainContainer from "../../components/utils/MainContainer";
-
-// Interfaces
-import { BlogData } from "../../interfaces/BlogData";
-
-// MDX Components
-import { components } from "../../components/utils/components";
 
 interface BlogPageProps {
   blogData: BlogData;
@@ -34,7 +31,7 @@ export default function BlogPage({
         text={blogData.detail}
       />
       <MainContainer py={100}>
-        <MDXRemote {...serializedContent} components={components} />
+        <MarkdownDisplay content={serializedContent} />
       </MainContainer>
     </>
   );
@@ -42,6 +39,7 @@ export default function BlogPage({
 
 // Library
 import { getAllBlogs, getContent, readBlogFile } from "../../lib/blogs";
+import MarkdownDisplay from "../../components/MarkdownDisplay";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogs = getAllBlogs();
