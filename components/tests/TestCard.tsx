@@ -1,3 +1,6 @@
+// NextJs
+import NextLink from "next/link";
+
 // ChakraUI
 import {
   Tr,
@@ -65,9 +68,14 @@ export default function TestCard({ test }: TestCardProps) {
           </Tr>
         </Tbody>
       </Table>
-      <PrimaryButton float="right" size={size}>
-        Book a test
-      </PrimaryButton>
+
+      <NextLink href="/coming-soon">
+        <a>
+          <PrimaryButton float="right" size={size}>
+            Book a test
+          </PrimaryButton>
+        </a>
+      </NextLink>
     </Box>
   );
 }

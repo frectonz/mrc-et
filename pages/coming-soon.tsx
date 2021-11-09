@@ -2,7 +2,7 @@
 import NextLink from "next/link";
 
 // Chakra UI
-import { Heading } from "@chakra-ui/layout";
+import { Heading, Center } from "@chakra-ui/layout";
 
 // Components
 import Seo from "../components/utils/Seo";
@@ -14,12 +14,16 @@ export default function NotFoundPage() {
     <>
       <Seo title="Not Found" />
       <MainContainer>
-        <Heading my={5}>The page you requested was not found.</Heading>
-        <NextLink href="/">
-          <a>
-            <PrimaryButton my={5}>Go to Home Page</PrimaryButton>
-          </a>
-        </NextLink>
+        <Heading mt={10} textAlign="center">
+          Coming Soon.
+        </Heading>
+        <Center mb={10}>
+          <NextLink href="/">
+            <a>
+              <PrimaryButton my={5}>Go to Home Page</PrimaryButton>
+            </a>
+          </NextLink>
+        </Center>
       </MainContainer>
     </>
   );
