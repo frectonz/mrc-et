@@ -3,29 +3,38 @@ import { GetStaticProps } from "next";
 
 // Interfaces
 import { TestData } from "../../interfaces/Test";
-import { TestsPageData } from "../../lib/testsPage";
 
 // Templates
 import TestsTemplate from "../../templates/TestsTemplate";
 
+// Data
+import test from "../../data/pages/tests.json";
+
 interface TestsPageProps {
   tests: TestData[];
-  hero: TestsPageData;
 }
 
-export default function Tests({ hero, tests }: TestsPageProps) {
-  return <TestsTemplate hero={hero} tests={tests} seoTitle="Tests" />;
+export default function Tests({ tests }: TestsPageProps) {
+  return (
+    <TestsTemplate
+      hero={{
+        headlineTitle: test.headline_title,
+        headlineDetail: test.headline_detail,
+        headlineImage: test.headline_image,
+      }}
+      tests={tests}
+      seoTitle="Tests"
+    />
+  );
 }
 
 // Library
 import { getAllTests } from "../../lib/tests";
-import { readTestsPageData } from "../../lib/testsPage";
 
 export const getStaticProps: GetStaticProps<TestsPageProps> = () => {
   const tests = getAllTests();
-  const testsPageData = readTestsPageData();
 
   return {
-    props: { tests, hero: testsPageData },
+    props: { tests },
   };
 };

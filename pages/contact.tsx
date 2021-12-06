@@ -1,6 +1,5 @@
 // NextJS
 import NextLink from "next/link";
-import { GetStaticProps } from "next";
 
 // ChakraUI
 import {
@@ -34,14 +33,10 @@ import MotionBox from "../components/utils/MotionBox";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
 
-// Interfaces
-import { FooterData } from "../interfaces/FooterData";
+// data
+import index from "../data/pages/index.json";
 
-interface ContactPageProps {
-  footerData: FooterData;
-}
-
-export default function Contact({ footerData }: ContactPageProps) {
+export default function Contact() {
   return (
     <>
       <Seo title="Contact Us" />
@@ -53,12 +48,12 @@ export default function Contact({ footerData }: ContactPageProps) {
           templateColumns={["repeat(1, 1fr)", null, "repeat(2, 1fr)"]}
         >
           <Stack>
-            <Location location={footerData.address} />
-            <ContactUs phone={footerData.phone} email={footerData.email} />
+            <Location location={index.address} />
+            <ContactUs phone={index.phone} email={index.email} />
             <FollowUs
-              twitterLink={footerData.twitter}
-              facebookLink={footerData.facebook}
-              linkedInLink={footerData.linkedin}
+              twitterLink={index.twitter}
+              facebookLink={index.facebook}
+              linkedInLink={index.linkedin}
             />
           </Stack>
           <ContactForm />
@@ -133,10 +128,10 @@ function ContactUs({ phone, email }: ContactUsProps) {
         Contact Us
       </Heading>
       <Text>
-        Phone : <ChakraLink href={`tel:${phone}`}>{phone}</ChakraLink>
+        Phone: <ChakraLink href={`tel:+${phone}`}>+{phone}</ChakraLink>
       </Text>
       <Text>
-        Email : <ChakraLink href={`mailto:${email}`}>{email}</ChakraLink>
+        Email: <ChakraLink href={`mailto:${email}`}>{email}</ChakraLink>
       </Text>
     </Box>
   );
@@ -185,12 +180,3 @@ function FollowUs({ facebookLink, twitterLink, linkedInLink }: FollowUsProps) {
     </Box>
   );
 }
-
-// Library
-import { readIndexPageData } from "../lib/indexPage";
-
-export const getStaticProps: GetStaticProps<ContactPageProps> = () => {
-  const indexPageData = readIndexPageData();
-
-  return { props: { footerData: indexPageData } };
-};

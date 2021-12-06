@@ -7,28 +7,36 @@ const homePage: CmsCollectionFile = {
   description: "Home page configuration",
   fields: [
     {
-      label: "Headline Title",
-      name: "headline_title",
+      label: "Headline",
+      name: "headline",
+      widget: "list",
+      allow_add: true,
+      fields: [
+        {
+          label: "Title",
+          name: "title",
+          widget: "string",
+        },
+        {
+          label: "Detail",
+          name: "detail",
+          widget: "text",
+        },
+        {
+          label: "Image",
+          name: "image",
+          widget: "image",
+        },
+      ],
+    },
+    {
+      label: "Tests page label",
+      name: "tests_page_label",
       widget: "string",
     },
     {
-      label: "Headline Detail",
-      name: "headline_detail",
-      widget: "text",
-    },
-    {
-      label: "Headline Image",
-      name: "headline_image",
-      widget: "image",
-    },
-    {
-      label: "Go to tests page label",
-      name: "go_to_tests_page_label",
-      widget: "string",
-    },
-    {
-      label: "Go to contact page label",
-      name: "go_to_contact_page_label",
+      label: "Contact page label",
+      name: "contact_page_label",
       widget: "string",
     },
     {

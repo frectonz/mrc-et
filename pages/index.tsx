@@ -1,75 +1,48 @@
 // NextJs
 import Script from "next/script";
 import NextLink from "next/link";
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 
 // ChakraUI
-import { Flex, Spacer, Badge } from "@chakra-ui/react";
+import { Flex, Badge } from "@chakra-ui/react";
 
 // Components
 import Seo from "../components/utils/Seo";
-import Hero from "../components/main/Hero";
-import Carousel from "../components/carousel/Carousel";
 import CardList from "../components/main/Cards/CardList";
+import HeroesCarousel from "../templates/HeroesCarousel";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
-import SecondaryButton from "../components/utils/SecondaryButton";
 import Testimonials from "../components/main/Testimonials/Testimonials";
 import TwoColumnSection from "../components/main/TwoColumnSection/TwoColumnSection";
 
-import { IndexPageData } from "../lib/indexPage";
 import { BlogData } from "../interfaces/BlogData";
 import { ServiceData } from "../interfaces/ServiceData";
 import { Testimonial } from "../interfaces/Testimonial";
 
+// data
+import index from "../data/pages/index.json";
+
 export interface HomePageProps {
+  latestBlog: BlogData;
   services: ServiceData[];
   testimonials: Testimonial[];
-  indexPageData: IndexPageData;
-  latestBlog: BlogData;
 }
 
 export default function HomePage({
-  indexPageData,
   services,
-  testimonials,
   latestBlog,
+  testimonials,
 }: HomePageProps) {
-  const hero = (
-    <Hero
-      alignment="left"
-      textColor="white"
-      title={indexPageData.headlineTitle}
-      text={indexPageData.headlineDetail}
-      image={indexPageData.headlineImage}
-    >
-      <Flex>
-        <NextLink href="/tests">
-          <a>
-            <SecondaryButton size="md">
-              {indexPageData.goToTestsLabel}
-            </SecondaryButton>
-          </a>
-        </NextLink>
-
-        <Spacer width={10} />
-
-        <NextLink href="/contact">
-          <a>
-            <SecondaryButton size="md">
-              {indexPageData.goToContactPageLabel}
-            </SecondaryButton>
-          </a>
-        </NextLink>
-      </Flex>
-    </Hero>
-  );
-
   return (
     <>
       <Seo />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-      <Carousel slides={[hero]} />
+
+      <HeroesCarousel
+        headlines={index.headlines}
+        testsPageLabel={index.tests_page_label}
+        contactPageLabel={index.contact_page_label}
+      />
 
       <MainContainer>
         <CardList
@@ -119,16 +92,14 @@ export default function HomePage({
 // Library
 import { getAllBlogs } from "../lib/blogs";
 import { getAllServices } from "../lib/services";
-import { readIndexPageData } from "../lib/indexPage";
 import { getAllTestimonials } from "../lib/testimonials";
 
 export const getStaticProps: GetStaticProps<HomePageProps> = () => {
   const blogs = getAllBlogs();
   const services = getAllServices();
   const testimonials = getAllTestimonials();
-  const indexPageData = readIndexPageData();
 
   return {
-    props: { services, indexPageData, testimonials, latestBlog: blogs[0] },
+    props: { services, testimonials, latestBlog: blogs[0] },
   };
 };
