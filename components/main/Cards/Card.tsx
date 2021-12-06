@@ -38,15 +38,10 @@ export default function Card({ card, showArrow, showBlob }: CardProps) {
     >
       {showBlob && <Blob />}
       <Stack p={5} spacing={5} borderRadius="md">
-        <HStack spacing={5} justify="space-between">
-          {card.image && (
-            <Image
-              width="14"
-              src={card.image}
-              alt={card.title}
-              filter={filter}
-            />
-          )}
+        {card.image && (
+          <Image width="14" src={card.image} alt={card.title} filter={filter} />
+        )}
+        <HStack justify="space-between">
           <Heading size="md">{card.title}</Heading>
           {showArrow && <ArrowToTheRight hover={hover} />}
         </HStack>
