@@ -9,7 +9,7 @@ import { Navigation } from "../navigation/Navigation";
 import { ColumnNavigation } from "../navigation/ColumnNavigation";
 
 // Interfaces
-import { NavLink } from "../../../interfaces/NavLink";
+import { NavLink } from "../../../../interfaces/NavLink";
 
 interface MenuProps {
   links: NavLink[];

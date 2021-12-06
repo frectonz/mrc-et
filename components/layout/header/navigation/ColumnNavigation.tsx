@@ -6,10 +6,10 @@ import { Box, Flex, VStack, Divider, useBoolean } from "@chakra-ui/react";
 
 // Interfaces
 import { NavigationProps } from "./Navigation";
-import { NavLink } from "../../../interfaces/NavLink";
+import { NavLink } from "../../../../interfaces/NavLink";
 
 // Components
-import ArrowToTheRight from "../../utils/ArrowToTheRight";
+import ArrowToTheRight from "../../../utils/ArrowToTheRight";
 
 export function ColumnNavigation({ links, ...rest }: NavigationProps) {
   return (

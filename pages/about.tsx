@@ -10,7 +10,7 @@ import { AboutPageData } from "../lib/aboutPage";
 // Components
 import Seo from "../components/utils/Seo";
 import CardsList from "../components/main/Cards/CardList";
-import MarkdownDisplay from "../components/MarkdownDisplay";
+import MarkdownDisplay from "../components/main/MarkdownDisplay";
 import MainContainer from "../components/utils/MainContainer";
 
 interface AboutPageProps {

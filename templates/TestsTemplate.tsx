@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 // Interfaces
+import { HeroData } from "../interfaces/HeroData";
 import { TestData } from "../interfaces/TestData";
-import { TestsPageData } from "../lib/testsPage";
 
 // Components
 import Seo from "../components/utils/Seo";
@@ -14,7 +14,7 @@ import TestsSearchInput from "../components/utils/TestsSearchInput";
 interface TestsTemplateProps {
   seoTitle: string;
   tests: TestData[];
-  hero: TestsPageData;
+  hero: HeroData;
 }
 
 export default function TestsTemplate({

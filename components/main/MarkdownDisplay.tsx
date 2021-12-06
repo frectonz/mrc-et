@@ -2,7 +2,7 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 // MDX Components
-import { components } from "../components/utils/components";
+import { components } from "../utils/components";
 
 interface MarkdownDisplayProps {
   content: MDXRemoteSerializeResult;

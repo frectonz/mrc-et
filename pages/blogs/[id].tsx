@@ -10,6 +10,7 @@ import { BlogData } from "../../interfaces/BlogData";
 // Components
 import Seo from "../../components/utils/Seo";
 import Hero from "../../components/main/Hero";
+import MarkdownDisplay from "../../components/main/MarkdownDisplay";
 import MainContainer from "../../components/utils/MainContainer";
 
 interface BlogPageProps {
@@ -39,7 +40,6 @@ export default function BlogPage({
 
 // Library
 import { getAllBlogs, getContent, readBlogFile } from "../../lib/blogs";
-import MarkdownDisplay from "../../components/MarkdownDisplay";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogs = getAllBlogs();
@@ -59,8 +59,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<BlogPageProps> = async ({
   params,
 }) => {
-  const blogData = readBlogFile(`${params?.id}.md`);
-  const serializedContent = await getContent(`${params?.id}.md`);
+  const blogFile = `${params?.id}.md`;
+  const blogData = readBlogFile(blogFile);
+  const serializedContent = await getContent(blogFile);
 
   return { props: { serializedContent, blogData } };
 };

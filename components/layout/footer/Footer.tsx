@@ -15,8 +15,8 @@ import {
 import { FaFacebook, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 // Components
-import MotionBox from "../utils/MotionBox";
-import MainContainer from "../utils/MainContainer";
+import MotionBox from "../../utils/MotionBox";
+import MainContainer from "../../utils/MainContainer";
 
 interface FooterProps {
   logoImage: string;

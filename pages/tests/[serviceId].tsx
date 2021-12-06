@@ -3,21 +3,23 @@ import { GetStaticProps, GetStaticPaths } from "next";
 
 // Interfaces
 import { TestData } from "../../interfaces/TestData";
-import { TestsPageData } from "../../lib/testsPage";
-import { ServiceData } from "../../interfaces/ServiceData";
+import { HeroData } from "../../interfaces/HeroData";
 
 // Templates
 import TestsTemplate from "../../templates/TestsTemplate";
 
-interface TestsOfAServicePageProps {
+// Data
+import testsData from "../../data/pages/tests.json";
+
+interface ServiceTestsPageProps {
   tests: TestData[];
-  hero: TestsPageData;
+  hero: HeroData;
 }
 
 export default function TestsOfAServicePage({
   hero,
   tests,
-}: TestsOfAServicePageProps) {
+}: ServiceTestsPageProps) {
   return (
     <TestsTemplate hero={hero} tests={tests} seoTitle={hero.headlineTitle} />
   );
@@ -25,7 +27,6 @@ export default function TestsOfAServicePage({
 
 // Library
 import { getAllTests } from "../../lib/tests";
-import { readTestsPageData } from "../../lib/testsPage";
 import { getAllServices, readServiceFile } from "../../lib/services";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -43,23 +44,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<TestsOfAServicePageProps> = async ({
+export const getStaticProps: GetStaticProps<ServiceTestsPageProps> = async ({
   params,
 }) => {
-  let tests = getAllTests();
-  const testsPageData = readTestsPageData();
-
-  let serviceData: ServiceData = {
-    code: "",
-    image: "",
-    description: "",
-    title: params?.serviceId as string,
-  };
-  try {
-    serviceData = readServiceFile(`${params?.serviceId}.yml`);
-  } catch {}
-
-  tests = tests.filter((test) =>
+  const serviceData = readServiceFile(`${params?.serviceId}.yml`);
+  const tests = getAllTests().filter((test) =>
     test.code.toLowerCase().includes(serviceData.code.toLowerCase())
   );
 
@@ -67,9 +56,9 @@ export const getStaticProps: GetStaticProps<TestsOfAServicePageProps> = async ({
     props: {
       tests,
       hero: {
-        headlineTitle: serviceData.title || testsPageData.headlineTitle,
-        headlineImage: testsPageData.headlineImage,
-        headlineDetail: serviceData.description || testsPageData.headlineDetail,
+        headlineTitle: serviceData.title,
+        headlineImage: testsData.headline_image,
+        headlineDetail: serviceData.description,
       },
     },
   };

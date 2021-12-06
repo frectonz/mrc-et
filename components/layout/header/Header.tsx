@@ -4,10 +4,10 @@ import { Flex } from "@chakra-ui/react";
 // Components
 import Logo from "./Logo";
 import Menu from "./menu/Menu";
-import MainContainer from "../utils/MainContainer";
+import MainContainer from "../../utils/MainContainer";
 
 // Interfaces
-import { NavLink } from "../../interfaces/NavLink";
+import { NavLink } from "../../../interfaces/NavLink";
 
 interface HeaderProp {
   links: NavLink[];

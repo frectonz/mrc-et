@@ -5,7 +5,7 @@ import NextLink from "next/link";
 import { Box, HStack, BoxProps } from "@chakra-ui/react";
 
 // Interfaces
-import { NavLink } from "../../../interfaces/NavLink";
+import { NavLink } from "../../../../interfaces/NavLink";
 
 export interface NavigationProps extends BoxProps {
   links: NavLink[];

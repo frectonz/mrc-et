@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
 // Components
-import Header from "../header";
-import Footer from "../footer/Footer";
+import Header from "./header";
+import Footer from "./footer/Footer";
 import { FooterData } from "../../interfaces/FooterData";
 
 const navProps = {
