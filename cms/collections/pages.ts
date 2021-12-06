@@ -8,9 +8,8 @@ const homePage: CmsCollectionFile = {
   fields: [
     {
       label: "Headline",
-      name: "headline",
+      name: "headlines",
       widget: "list",
-      allow_add: true,
       fields: [
         {
           label: "Title",
@@ -80,7 +79,7 @@ const homePage: CmsCollectionFile = {
 const testsPage: CmsCollectionFile = {
   name: "tests_page",
   label: "Tests Page",
-  file: "data/pages/tests.yml",
+  file: "data/pages/tests.json",
   description: "Tests page configuration",
   fields: [
     {
