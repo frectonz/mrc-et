@@ -15,17 +15,18 @@ import PrimaryButton from "../components/utils/PrimaryButton";
 import Testimonials from "../components/main/Testimonials/Testimonials";
 import TwoColumnSection from "../components/main/TwoColumnSection/TwoColumnSection";
 
+// Interfaces
 import { BlogData } from "../interfaces/BlogData";
 import { ServiceData } from "../interfaces/ServiceData";
-import { Testimonial } from "../interfaces/Testimonial";
+import { TestimonialData } from "../interfaces/TestimonialData";
 
-// data
+// Data
 import index from "../data/pages/index.json";
 
 export interface HomePageProps {
   latestBlog: BlogData;
   services: ServiceData[];
-  testimonials: Testimonial[];
+  testimonials: TestimonialData[];
 }
 
 export default function HomePage({

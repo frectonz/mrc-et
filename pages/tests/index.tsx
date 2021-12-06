@@ -2,7 +2,7 @@
 import { GetStaticProps } from "next";
 
 // Interfaces
-import { TestData } from "../../interfaces/Test";
+import { TestData } from "../../interfaces/TestData";
 
 // Templates
 import TestsTemplate from "../../templates/TestsTemplate";

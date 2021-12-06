@@ -7,7 +7,7 @@ import {
 } from "@choc-ui/chakra-autocomplete";
 
 // Interfaces
-import { TestData } from "../../interfaces/Test";
+import { TestData } from "../../interfaces/TestData";
 
 interface TestsSearchInputProps {
   tests: TestData[];

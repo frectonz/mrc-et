@@ -2,13 +2,13 @@
 import { Grid } from "@chakra-ui/react";
 
 // Interface
-import { Testimonial } from "../../../interfaces/Testimonial";
+import { TestimonialData } from "../../../interfaces/TestimonialData";
 
 // Components
 import TestimonialCard from "./Testimonial";
 
 interface TestimonialsProps {
-  testimonials: Testimonial[];
+  testimonials: TestimonialData[];
 }
 
 export default function Testimonials({ testimonials }: TestimonialsProps) {

@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 // Interfaces
-import { TestData } from "../../interfaces/Test";
+import { TestData } from "../../interfaces/TestData";
 
 // Components
 import PrimaryButton from "../utils/PrimaryButton";

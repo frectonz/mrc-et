@@ -2,7 +2,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 
 // Interfaces
-import { TestData } from "../../interfaces/Test";
+import { TestData } from "../../interfaces/TestData";
 import { TestsPageData } from "../../lib/testsPage";
 import { ServiceData } from "../../interfaces/ServiceData";
 

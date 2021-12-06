@@ -15,10 +15,10 @@ import { FaQuoteLeft } from "react-icons/fa";
 import MotionBox from "../../utils/MotionBox";
 
 // Interface
-import { Testimonial } from "../../../interfaces/Testimonial";
+import { TestimonialData } from "../../../interfaces/TestimonialData";
 
 interface TestimonialProps {
-  testimonial: Testimonial;
+  testimonial: TestimonialData;
 }
 
 export default function TestimonialCard({ testimonial }: TestimonialProps) {

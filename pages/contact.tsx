@@ -33,7 +33,7 @@ import MotionBox from "../components/utils/MotionBox";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
 
-// data
+// Data
 import index from "../data/pages/index.json";
 
 export default function Contact() {

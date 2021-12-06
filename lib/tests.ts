@@ -2,7 +2,7 @@ import { join } from "path";
 import { parse } from "yaml";
 import { readdirSync, readFileSync } from "fs";
 
-import { TestData } from "../interfaces/Test";
+import { TestData } from "../interfaces/TestData";
 
 const TESTS_DIR = join(process.cwd(), "/data/tests");
 

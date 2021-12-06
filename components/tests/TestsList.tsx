@@ -5,7 +5,7 @@ import { Divider, Stack } from "@chakra-ui/react";
 import TestCard from "./TestCard";
 
 // Interfaces
-import { TestData } from "../../interfaces/Test";
+import { TestData } from "../../interfaces/TestData";
 
 interface TestsListProps {
   tests: TestData[];

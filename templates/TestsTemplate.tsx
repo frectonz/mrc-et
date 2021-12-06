@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // Interfaces
-import { TestData } from "../interfaces/Test";
+import { TestData } from "../interfaces/TestData";
 import { TestsPageData } from "../lib/testsPage";
 
 // Components

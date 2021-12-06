@@ -1,4 +1,4 @@
-export interface Testimonial {
+export interface TestimonialData {
   testimonial: string;
   personTitle: string;
   personImage: string;
