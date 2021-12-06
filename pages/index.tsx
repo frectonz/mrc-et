@@ -9,6 +9,7 @@ import { Flex, Spacer, Badge } from "@chakra-ui/react";
 // Components
 import Seo from "../components/utils/Seo";
 import Hero from "../components/main/Hero";
+import Carousel from "../components/carousel/Carousel";
 import CardList from "../components/main/Cards/CardList";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
@@ -34,37 +35,41 @@ export default function HomePage({
   testimonials,
   latestBlog,
 }: HomePageProps) {
+  const hero = (
+    <Hero
+      alignment="left"
+      textColor="white"
+      title={indexPageData.headlineTitle}
+      text={indexPageData.headlineDetail}
+      image={indexPageData.headlineImage}
+    >
+      <Flex>
+        <NextLink href="/tests">
+          <a>
+            <SecondaryButton size="md">
+              {indexPageData.goToTestsLabel}
+            </SecondaryButton>
+          </a>
+        </NextLink>
+
+        <Spacer width={10} />
+
+        <NextLink href="/contact">
+          <a>
+            <SecondaryButton size="md">
+              {indexPageData.goToContactPageLabel}
+            </SecondaryButton>
+          </a>
+        </NextLink>
+      </Flex>
+    </Hero>
+  );
+
   return (
     <>
       <Seo />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-      <Hero
-        alignment="left"
-        textColor="white"
-        title={indexPageData.headlineTitle}
-        text={indexPageData.headlineDetail}
-        image={indexPageData.headlineImage}
-      >
-        <Flex>
-          <NextLink href="/tests">
-            <a>
-              <SecondaryButton size="md">
-                {indexPageData.goToTestsLabel}
-              </SecondaryButton>
-            </a>
-          </NextLink>
-
-          <Spacer width={10} />
-
-          <NextLink href="/contact">
-            <a>
-              <SecondaryButton size="md">
-                {indexPageData.goToContactPageLabel}
-              </SecondaryButton>
-            </a>
-          </NextLink>
-        </Flex>
-      </Hero>
+      <Carousel slides={[hero]} />
 
       <MainContainer>
         <CardList
