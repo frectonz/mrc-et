@@ -14,15 +14,7 @@ export default function SecondaryButton({
 }: SecondaryButton) {
   return (
     <MotionBox>
-      <Button
-        {...rest}
-        bg="#3fa1ec"
-        color="black"
-        variant="solid"
-        _hover={{
-          bg: "#3fa1ec",
-        }}
-      >
+      <Button {...rest} bg="brand.secondary" color="black" variant="solid">
         {children}
       </Button>
     </MotionBox>

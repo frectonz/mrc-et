@@ -30,7 +30,7 @@ function LinkItem({ link }: { link: NavLink }) {
       as="li"
       cursor="pointer"
       fontSize={[`md`, null, null, `lg`]}
-      _hover={{ color: "#3fa1ec" }}
+      _hover={{ color: "brand.secondary" }}
     >
       <NextLink href={link.href}>
         <a>{link.name}</a>

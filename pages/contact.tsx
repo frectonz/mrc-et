@@ -76,20 +76,20 @@ function ContactForm() {
         Contact Us
       </Heading>
       <InputGroup my={5}>
-        <InputLeftElement pointerEvents="none">
-          <FaUser color="#3fa1ec" />
+        <InputLeftElement pointerEvents="none" color="brand.secondary">
+          <FaUser />
         </InputLeftElement>
         <Input type="text" placeholder="Name" />
       </InputGroup>
       <InputGroup my={5}>
-        <InputLeftElement pointerEvents="none">
-          <FaPhone color="#3fa1ec" style={{ transform: "rotate(90deg)" }} />
+        <InputLeftElement pointerEvents="none" color="brand.secondary">
+          <FaPhone style={{ transform: "rotate(90deg)" }} />
         </InputLeftElement>
         <Input type="tel" placeholder="Phone" />
       </InputGroup>
       <InputGroup my={5}>
-        <InputLeftElement pointerEvents="none">
-          <FaEnvelope color="#3fa1ec" />
+        <InputLeftElement pointerEvents="none" color="brand.secondary">
+          <FaEnvelope />
         </InputLeftElement>
         <Input type="email" placeholder="Email" />
       </InputGroup>
@@ -174,8 +174,8 @@ function FollowUs({ facebookLink, twitterLink, linkedInLink }: FollowUsProps) {
           return (
             <NextLink key={i} href={href}>
               <a>
-                <MotionBox>
-                  <Icon color="#3fa1ec" fontSize="1.4rem" />
+                <MotionBox color="brand.secondary">
+                  <Icon fontSize="1.4rem" />
                 </MotionBox>
               </a>
             </NextLink>

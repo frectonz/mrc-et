@@ -25,7 +25,7 @@ export default function MenuDrawer({
   return (
     <Drawer isOpen={isOpen} onClose={onClose} size="full" placement="bottom">
       <DrawerContent>
-        <DrawerHeader pt={200} display="flex" justifyContent="space-between">
+        <DrawerHeader pt={100} display="flex" justifyContent="space-between">
           <Heading size="md" lineHeight="2.5rem">
             Menu
           </Heading>

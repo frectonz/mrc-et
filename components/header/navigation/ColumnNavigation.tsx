@@ -34,7 +34,7 @@ function ColumnLinkItem({ link }: { link: NavLink }) {
         justifyContent="space-between"
         onMouseEnter={setHover.on}
         onMouseLeave={setHover.off}
-        _hover={{ color: "#3fa1ec" }}
+        _hover={{ color: "brand.secondary" }}
       >
         <NextLink href={link.href}>
           <a>{link.name}</a>

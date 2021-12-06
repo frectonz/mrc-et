@@ -35,7 +35,7 @@ export default function TestsSearchInput({
   const options = [{ value: "", label: "" }, ...testCodes, ...testNames];
 
   return (
-    <AutoComplete onChange={onChange}>
+    <AutoComplete emptyState={false} onChange={onChange}>
       <AutoCompleteInput
         autoComplete="none"
         placeholder="Type in a test code or test name. Click enter to search"

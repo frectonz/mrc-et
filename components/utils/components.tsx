@@ -46,7 +46,7 @@ const img = ({ src, alt, title }: { src: any; alt: any; title: any }) => (
   </>
 );
 const a = ({ children, ...props }: { children: any }) => (
-  <Link {...props} color="#3fa1ec">
+  <Link {...props} color="brand.secondary">
     {children}
   </Link>
 );

@@ -5,7 +5,7 @@ import { AppProps } from "next/app";
 import Layout from "../components/layout/Layout";
 
 // ChakraUI
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 // data
 import indexPageData from "../data/pages/index.json";
@@ -20,9 +20,17 @@ const footerData = {
   licenseInformation: indexPageData.license_information,
 };
 
+const theme = extendTheme({
+  colors: {
+    brand: {
+      secondary: "#51b6e8",
+    },
+  },
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Layout footerData={footerData}>
         <Component {...pageProps} />
       </Layout>

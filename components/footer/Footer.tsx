@@ -40,7 +40,7 @@ export default function Footer({
   linkedInLink,
 }: FooterProps) {
   return (
-    <Box bgColor="gray.700" color="white" py={10}>
+    <Box bgColor="#223645" color="white" py={10}>
       <MainContainer>
         <Grid
           gap={5}

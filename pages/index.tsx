@@ -39,6 +39,7 @@ export default function HomePage({
       <Seo />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <Hero
+        alignment="left"
         textColor="white"
         title={indexPageData.headlineTitle}
         text={indexPageData.headlineDetail}

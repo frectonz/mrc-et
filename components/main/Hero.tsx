@@ -9,14 +9,16 @@ interface HeroProps {
   image: string;
   textColor: string;
   children?: ReactNode;
+  alignment?: "left" | "center";
 }
 
 export default function Hero({
-  title,
   text,
-  textColor,
+  title,
   image,
   children,
+  textColor,
+  alignment = "center",
 }: HeroProps) {
   const background = {
     bgPos: "center",
@@ -28,17 +30,19 @@ export default function Hero({
 
   return (
     <Stack
+      px={50}
       py={150}
       spacing={5}
       as="section"
-      align="center"
       color={textColor}
+      textAlign={alignment === "center" ? "center" : "left"}
+      align={alignment === "center" ? "center" : "flex-start"}
       {...background}
     >
-      <Heading as="h1" textShadow="2xl" textAlign="center">
+      <Heading as="h1" size="3xl" textShadow="3xl">
         {title}
       </Heading>
-      <Text maxWidth="65ch" align="center" textAlign="center">
+      <Text fontSize="xl" maxWidth="65ch">
         {text}
       </Text>
       {children}
