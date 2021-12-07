@@ -8,9 +8,6 @@ import { HeroData } from "../../interfaces/HeroData";
 // Templates
 import TestsTemplate from "../../templates/TestsTemplate";
 
-// Data
-import testsData from "../../data/pages/tests.json";
-
 interface ServiceTestsPageProps {
   tests: TestData[];
   hero: HeroData;
@@ -57,7 +54,7 @@ export const getStaticProps: GetStaticProps<ServiceTestsPageProps> = async ({
       tests,
       hero: {
         headlineTitle: serviceData.title,
-        headlineImage: testsData.headline_image,
+        headlineImage: serviceData.bgImage,
         headlineDetail: serviceData.description,
       },
     },

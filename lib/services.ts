@@ -20,6 +20,7 @@ export function readServiceFile(serviceFile: string): ServiceData {
     code: parsed.code,
     title: parsed.title,
     image: parsed.image,
+    bgImage: parsed.bgImage,
     description: parsed.description,
   };
 }

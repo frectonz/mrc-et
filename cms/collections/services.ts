@@ -30,6 +30,12 @@ export const services: CmsCollection = {
       hint: "The icon for the service.",
     },
     {
+      label: "Service Background Image",
+      name: "bgImage",
+      widget: "image",
+      hint: "The background image for the service.",
+    },
+    {
       label: "Service",
       name: "description",
       widget: "text",
