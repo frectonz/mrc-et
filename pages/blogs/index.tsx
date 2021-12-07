@@ -10,6 +10,9 @@ import TwoColumnSection from "../../components/main/TwoColumnSection/TwoColumnSe
 // Interfaces
 import { BlogData } from "../../interfaces/BlogData";
 
+// Data
+import blogsData from "../../data/pages/blogs.json";
+
 interface BlogsPage {
   blogs: BlogData[];
 }
@@ -18,7 +21,12 @@ export default function Blogs({ blogs }: BlogsPage) {
   return (
     <>
       <Seo title="Blogs" />
-      <Hero title="Blogs" text="" image="/image/lab.jpg" textColor="white" />
+      <Hero
+        title={blogsData.headline_title}
+        text={blogsData.headline_detail}
+        image={blogsData.headline_image}
+        textColor="white"
+      />
       <MainContainer>
         {blogs.map((blog, i) => {
           return (
