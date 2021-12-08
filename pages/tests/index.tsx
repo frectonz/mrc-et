@@ -24,6 +24,7 @@ export default function Tests({ tests }: TestsPageProps) {
       }}
       tests={tests}
       seoTitle="Tests"
+      samplingTechniqueLabel={test.sampling_technique}
     />
   );
 }

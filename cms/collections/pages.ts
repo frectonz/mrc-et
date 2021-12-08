@@ -97,6 +97,11 @@ const testsPage: CmsCollectionFile = {
       name: "headline_image",
       widget: "image",
     },
+    {
+      label: "Sampling Technique Labels",
+      name: "sampling_technique",
+      widget: "string",
+    },
   ],
 };
 

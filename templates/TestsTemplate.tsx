@@ -10,17 +10,20 @@ import Hero from "../components/main/Hero";
 import TestsList from "../components/tests/TestsList";
 import MainContainer from "../components/utils/MainContainer";
 import TestsSearchInput from "../components/utils/TestsSearchInput";
+import SecondaryButton from "../components/utils/SecondaryButton";
 
 interface TestsTemplateProps {
+  hero: HeroData;
   seoTitle: string;
   tests: TestData[];
-  hero: HeroData;
+  samplingTechniqueLabel: string;
 }
 
 export default function TestsTemplate({
   hero,
   tests,
   seoTitle,
+  samplingTechniqueLabel,
 }: TestsTemplateProps) {
   const [testsList, setTestsList] = useState(tests);
 
@@ -51,7 +54,12 @@ export default function TestsTemplate({
         image={hero.headlineImage}
         title={hero.headlineTitle}
         text={hero.headlineDetail}
-      />
+      >
+        <a href="/sampling-techniques.pdf">
+          <SecondaryButton>{samplingTechniqueLabel}</SecondaryButton>
+        </a>
+      </Hero>
+
       <MainContainer my={30}>
         <TestsSearchInput tests={tests} onChange={handleChange} />
       </MainContainer>
