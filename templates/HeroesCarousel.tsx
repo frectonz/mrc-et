@@ -35,11 +35,14 @@ const HeroesCarousel: FunctionComponent<HeroesCarouselProps> = ({
           alignment="left"
           textColor="white"
           key={`hero-${i}`}
+          gradientType="carousel"
         >
           <Flex>
             <NextLink href="/tests">
               <a>
-                <SecondaryButton size="md">{testsPageLabel}</SecondaryButton>
+                <SecondaryButton bg="#e2e8f0" size="md">
+                  {testsPageLabel}
+                </SecondaryButton>
               </a>
             </NextLink>
 
@@ -47,7 +50,9 @@ const HeroesCarousel: FunctionComponent<HeroesCarouselProps> = ({
 
             <NextLink href="/contact">
               <a>
-                <SecondaryButton size="md">{contactPageLabel}</SecondaryButton>
+                <SecondaryButton bg="#e2e8f0" size="md">
+                  {contactPageLabel}
+                </SecondaryButton>
               </a>
             </NextLink>
           </Flex>

@@ -10,6 +10,7 @@ interface HeroProps {
   textColor: string;
   children?: ReactNode;
   alignment?: "left" | "center";
+  gradientType?: "headline" | "carousel";
 }
 
 export default function Hero({
@@ -19,13 +20,20 @@ export default function Hero({
   children,
   textColor,
   alignment = "center",
+  gradientType = "headline",
 }: HeroProps) {
+  const bgImage = image && `url(${image})`;
+  const textShadow = "2px 2px rgba(0, 0, 0, .2)";
   const background = {
-    bgPos: "center",
+    bg: `${bgImage}
+    ${
+      gradientType === "carousel"
+        ? "rgba(84, 185, 227, .3)"
+        : "rgba(0, 0, 0, .5)"
+    }`,
     bgSize: "cover",
-    bgImage: image,
+    bgPos: "center",
     bgBlendMode: "color",
-    bgColor: "rgba(0,0,0,0.3)",
   };
 
   return (
@@ -39,10 +47,10 @@ export default function Hero({
       align={alignment === "center" ? "center" : "flex-start"}
       {...background}
     >
-      <Heading as="h1" size="3xl" textShadow="3xl">
+      <Heading as="h1" size="3xl" textShadow={textShadow}>
         {title}
       </Heading>
-      <Text fontSize="xl" maxWidth="65ch">
+      <Text fontSize="xl" maxWidth="65ch" textShadow={textShadow}>
         {text}
       </Text>
       {children}
