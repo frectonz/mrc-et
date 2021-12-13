@@ -1,5 +1,5 @@
 // ChakraUI
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 
 // Components
 import Logo from "./Logo";
@@ -15,12 +15,16 @@ interface HeaderProp {
 }
 
 export default function Header({ links, actionButtonLabel }: HeaderProp) {
+  const bg = useColorModeValue("white", "gray.800");
+
   return (
-    <MainContainer>
-      <Flex py={2} as="header" align="center" justify="space-between">
-        <Logo />
-        <Menu links={links} actionButtonLabel={actionButtonLabel} />
-      </Flex>
-    </MainContainer>
+    <Box position="fixed" top="0" zIndex="100" width="100vw">
+      <MainContainer bg={bg}>
+        <Flex py={2} as="header" align="center" justify="space-between">
+          <Logo />
+          <Menu links={links} actionButtonLabel={actionButtonLabel} />
+        </Flex>
+      </MainContainer>
+    </Box>
   );
 }
