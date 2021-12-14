@@ -1,7 +1,10 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 // ChakraUI
-import { Text, Stack, Heading } from "@chakra-ui/react";
+import { Text, Stack, Heading, Box } from "@chakra-ui/react";
+
+// Components
+import MainContainer from "../utils/MainContainer";
 
 interface HeroProps {
   title: string;
@@ -37,24 +40,25 @@ export default function Hero({
   };
 
   return (
-    <Stack
-      px={50}
-      h="70vh"
-      spacing={7}
-      as="section"
-      justify="center"
-      color={textColor}
-      textAlign={alignment === "center" ? "center" : "left"}
-      align={alignment === "center" ? "center" : "flex-start"}
-      {...background}
-    >
-      <Heading as="h1" size="3xl" textShadow={textShadow}>
-        {title}
-      </Heading>
-      <Text fontSize="xl" maxWidth="65ch" textShadow={textShadow}>
-        {text}
-      </Text>
-      {children}
-    </Stack>
+    <Box h="70vh" color={textColor} {...background}>
+      <MainContainer height="100%">
+        <Stack
+          width="100%"
+          height="100%"
+          spacing={7}
+          justify="center"
+          textAlign={alignment === "center" ? "center" : "left"}
+          align={alignment === "center" ? "center" : "flex-start"}
+        >
+          <Heading as="h1" size="3xl" textShadow={textShadow}>
+            {title}
+          </Heading>
+          <Text fontSize="xl" maxWidth="65ch" textShadow={textShadow}>
+            {text}
+          </Text>
+          {children}
+        </Stack>
+      </MainContainer>
+    </Box>
   );
 }

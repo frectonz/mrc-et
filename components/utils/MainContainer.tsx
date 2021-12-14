@@ -9,7 +9,7 @@ interface Props extends ContainerProps {
 
 export default function MainContainer({ children, ...rest }: Props) {
   return (
-    <Container maxW="container.lg" {...rest}>
+    <Container maxW="container.xl" {...rest}>
       {children}
     </Container>
   );
