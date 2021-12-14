@@ -29,6 +29,7 @@ const HeroesCarousel: FunctionComponent<HeroesCarouselProps> = ({
     <Carousel
       slides={headlines.map(({ title, image, detail }, i) => (
         <Hero
+          px={10}
           title={title}
           text={detail}
           image={image}

@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 
 // ChakraUI
-import { Text, Stack, Heading, Box } from "@chakra-ui/react";
+import { Text, Stack, Heading, Box, BoxProps } from "@chakra-ui/react";
 
 // Components
 import MainContainer from "../utils/MainContainer";
 
-interface HeroProps {
+interface HeroProps extends BoxProps {
   title: string;
   text: string;
   image: string;
@@ -24,6 +24,7 @@ export default function Hero({
   textColor,
   alignment = "center",
   gradientType = "headline",
+  ...rest
 }: HeroProps) {
   const bgImage = image && `url(${image})`;
   const textShadow = "2px 2px rgba(0, 0, 0, .2)";
@@ -40,7 +41,7 @@ export default function Hero({
   };
 
   return (
-    <Box h="70vh" color={textColor} {...background}>
+    <Box {...rest} h="70vh" color={textColor} {...background}>
       <MainContainer height="100%">
         <Stack
           width="100%"
