@@ -39,9 +39,10 @@ export default function Hero({
   return (
     <Stack
       px={50}
-      py={150}
-      spacing={5}
+      h="70vh"
+      spacing={7}
       as="section"
+      justify="center"
       color={textColor}
       textAlign={alignment === "center" ? "center" : "left"}
       align={alignment === "center" ? "center" : "flex-start"}
