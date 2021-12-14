@@ -12,7 +12,7 @@ export default function Logo() {
     <Box p={1} bg={bg} borderRadius="sm">
       <NextLink href="/">
         <a>
-          <Image src="/logo.webp" width="100px" height="48px" alt="Logo" />
+          <Image src="/logo.webp" width="160px" alt="Logo" />
         </a>
       </NextLink>
     </Box>

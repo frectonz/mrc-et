@@ -19,7 +19,7 @@ export default function Header({ links, actionButtonLabel }: HeaderProp) {
 
   return (
     <Box position="fixed" top="0" zIndex="100" width="100vw">
-      <MainContainer bg={bg}>
+      <MainContainer bg={bg} boxShadow="md">
         <Flex py={2} as="header" align="center" justify="space-between">
           <Logo />
           <Menu links={links} actionButtonLabel={actionButtonLabel} />
