@@ -2,7 +2,7 @@
 import NextLink from "next/link";
 
 // Chakra UI
-import { Box, HStack, BoxProps } from "@chakra-ui/react";
+import { Box, HStack, Image, BoxProps } from "@chakra-ui/react";
 
 // Interfaces
 import { NavLink } from "../../../../interfaces/NavLink";
@@ -28,10 +28,17 @@ function LinkItem({ link }: { link: NavLink }) {
     <Box
       p={2}
       as="li"
+      fontSize="xl"
       cursor="pointer"
-      fontSize={[`md`, null, null, `lg`]}
       _hover={{ color: "brand.secondary" }}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      style={{
+        gap: "5px",
+      }}
     >
+      <Image width="20px" alt="" src={link.icon} />
       <NextLink href={link.href}>
         <a>{link.name}</a>
       </NextLink>

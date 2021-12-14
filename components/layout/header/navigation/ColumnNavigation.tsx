@@ -2,7 +2,14 @@
 import NextLink from "next/link";
 
 // ChakraUI
-import { Box, Flex, VStack, Divider, useBoolean } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Image,
+  VStack,
+  Divider,
+  useBoolean,
+} from "@chakra-ui/react";
 
 // Interfaces
 import { NavigationProps } from "./Navigation";
@@ -31,14 +38,25 @@ function ColumnLinkItem({ link }: { link: NavLink }) {
         p={2}
         as="li"
         width="100%"
+        fontSize="xl"
         justifyContent="space-between"
         onMouseEnter={setHover.on}
         onMouseLeave={setHover.off}
         _hover={{ color: "brand.secondary" }}
       >
-        <NextLink href={link.href}>
-          <a>{link.name}</a>
-        </NextLink>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          style={{
+            gap: "5px",
+          }}
+        >
+          <Image width="20px" alt="" src={link.icon} />
+          <NextLink href={link.href}>
+            <a>{link.name}</a>
+          </NextLink>
+        </Box>
         <NextLink href={link.href}>
           <a>
             <ArrowToTheRight hover={hover} />

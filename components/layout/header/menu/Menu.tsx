@@ -20,7 +20,7 @@ export default function Menu({ links, actionButtonLabel }: MenuProps) {
   const showMenu = useBreakpointValue({
     xl: false,
     lg: false,
-    md: false,
+    md: true,
     sm: true,
     xs: true,
     base: true,

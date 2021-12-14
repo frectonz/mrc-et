@@ -4,31 +4,35 @@ import { ReactNode } from "react";
 import Header from "./header";
 import Footer from "./footer/Footer";
 import { FooterData } from "../../interfaces/FooterData";
+import { NavLink } from "../../interfaces/NavLink";
 
-const navProps = {
-  links: [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "Tests",
-      href: "/tests",
-    },
-    {
-      name: "Blogs",
-      href: "/blogs",
-    },
-    {
-      name: "About",
-      href: "/about",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-    },
-  ],
-};
+const links: NavLink[] = [
+  {
+    name: "Home",
+    href: "/",
+    icon: "/icons/hospital.svg",
+  },
+  {
+    name: "Tests",
+    href: "/tests",
+    icon: "/icons/medicine.svg",
+  },
+  {
+    name: "Blogs",
+    href: "/blogs",
+    icon: "/icons/newspaper.svg",
+  },
+  {
+    name: "About",
+    href: "/about",
+    icon: "/icons/heart.svg",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+    icon: "/icons/microscope.svg",
+  },
+];
 
 const controlsProps = {
   actionButton: "Book A Test",
@@ -42,10 +46,7 @@ interface LayoutProps {
 export default function Layout({ children, footerData }: LayoutProps) {
   return (
     <>
-      <Header
-        links={navProps.links}
-        actionButtonLabel={controlsProps.actionButton}
-      />
+      <Header links={links} actionButtonLabel={controlsProps.actionButton} />
       {children}
       <Footer
         logoImage="/logo.webp"
