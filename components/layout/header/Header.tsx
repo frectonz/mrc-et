@@ -18,7 +18,7 @@ export default function Header({ links, actionButtonLabel }: HeaderProp) {
   const bg = useColorModeValue("white", "gray.800");
 
   return (
-    <Box position="fixed" top="0" zIndex="100" width="100vw">
+    <Box position="fixed" top="0" zIndex="banner" width="100vw">
       <MainContainer bg={bg} boxShadow="md">
         <Flex py={2} as="header" align="center" justify="space-between">
           <Logo />
