@@ -1,16 +1,7 @@
 {
-  "headlines": [
-    {
-      "title": "Welcome to MRC-ET",
-      "image": "/image/mrc-et-gradient.png",
-      "detail": "MRC-ET Advanced Laboratory a molecular diagnostic research laboratory center in Ethiopia Established in 2012 GC and became operational in 2014 GC."
-    },
-    {
-      "title": "Your DNA, Your HEALTH",
-      "image": "/image/lab.jpg",
-      "detail": "MRC-ET Advanced Laboratory a molecular diagnostic research laboratory center in Ethiopia Established in 2012 GC and became operational in 2014 GC."
-    }
-  ],
+  "tests_page_label": "Book A Test",
+  "contact_page_label": "Contact Us",
+  "facebook": "https://www.facebook.com/mrcetmoleculardiagnostics/",
   "collaborators": [
     {
       "name": "MRC Holland",
@@ -53,6 +44,12 @@
       "image": "/image/public-health-association.gif"
     }
   ],
+  "phone": "251116394118",
+  "license_information": "This website is owned by MRC-ET Advanced Laboratory a molecular diagnostic research laboratory/center in Ethiopia Established in 2012 GC and became operational in 2014 GC.",
+  "twitter": "https://www.twitter.com/",
+  "address": "Ethiopia, Addis Ababa, Gerji around Kadisko Hospital",
+  "email": "info@mrc-et.com",
+  "linkedin": "https://www.linkedin.com/",
   "recommendedLinks": [
     {
       "text": "MRC-Holland",
@@ -67,13 +64,21 @@
       "url": "http://www.sphmmc.edu.et/"
     }
   ],
-  "tests_page_label": "Book A Test",
-  "contact_page_label": "Contact Us",
-  "phone": "251116394118",
-  "email": "info@mrc-et.com",
-  "address": "Ethiopia, Addis Ababa, Gerji around Kadisko Hospital",
-  "twitter": "https://www.twitter.com/",
-  "facebook": "https://www.facebook.com/mrcetmoleculardiagnostics/",
-  "linkedin": "https://www.linkedin.com/",
-  "license_information": "This website is owned by MRC-ET Advanced Laboratory a molecular diagnostic research laboratory/center in Ethiopia Established in 2012 GC and became operational in 2014 GC."
+  "headlines": [
+    {
+      "title": "Welcome to MRC-ET",
+      "image": "/image/mrc-et-gradient.png",
+      "detail": "MRC-ET Advanced Laboratory a molecular diagnostic research laboratory center in Ethiopia Established in 2012 GC and became operational in 2014 GC."
+    },
+    {
+      "title": "Your DNA, Your HEALTH",
+      "image": "/image/lab.jpg",
+      "detail": "MRC-ET Advanced Laboratory a molecular diagnostic research laboratory center in Ethiopia Established in 2012 GC and became operational in 2014 GC."
+    },
+    {
+      "title": "ዲ ኤን ኤ ወይም ዘረመል",
+      "detail": "ከትውልድ ወደ ትውልድ የሚተላለፉ ባህሪያትን ገላጭ መረጃ የያዘዉን የዲ ኤን ኤ (DNA) ወይም ዘረመል ሞለኪዩል እንደሆነና እሱንም በመመርመር በትውልድ ሀረግ ሲሳሳብ የመጣ የጤና ችግርንም ማወቅ እንደሚቻል ያውቃሉን? የእርስዎ ዲኤንኤ ወይም ዘረመል ስለ ጤንነትዎ መረጃ እንደያዘ ያዉቃሉ? ኤም አር ሲ-ኢት አድቫንስድ ላብራቶሪ በ ዲኤንኤ ወይም ዘረመል ናሙና ላይ የተመሰረተ ምርመራ በማድረግ ከዉልደት በፊት ወይም በኋላ በዘረመል መዛባት ከትውልድ ወደ ትውልድ ሊወራረሱ የሚችሉ የጤና ችግሮችን ያሳውቃል፣ የተሟላ የላብራቶሪ አገልግሎቶችንም ይሰጣል፡፡",
+      "image": "/image/genetic-defects.jpg"
+    }
+  ]
 }
