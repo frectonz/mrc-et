@@ -27,7 +27,7 @@ export default function Hero({
   ...rest
 }: HeroProps) {
   const bgImage = image && `url(${image})`;
-  const textShadow = "2px 2px rgba(0, 0, 0, .2)";
+  const textShadow = "2px 2px rgba(0, 0, 0, .3)";
   const background = {
     bg: `${bgImage}
     ${
@@ -41,20 +41,33 @@ export default function Hero({
   };
 
   return (
-    <Box {...rest} h="70vh" color={textColor} {...background}>
+    <Box
+      {...rest}
+      h={["90vh", null, null, "70vh"]}
+      color={textColor}
+      {...background}
+    >
       <MainContainer height="100%">
         <Stack
+          spacing={7}
           width="100%"
           height="100%"
-          spacing={7}
           justify="center"
           textAlign={alignment === "center" ? "center" : "left"}
           align={alignment === "center" ? "center" : "flex-start"}
         >
-          <Heading as="h1" size="3xl" textShadow={textShadow}>
+          <Heading
+            as="h1"
+            textShadow={textShadow}
+            fontSize={["1.7rem", "2rem", "", "3rem"]}
+          >
             {title}
           </Heading>
-          <Text fontSize="xl" maxWidth="65ch" textShadow={textShadow}>
+          <Text
+            maxWidth="65ch"
+            textShadow={textShadow}
+            fontSize={["1.2rem", "1.4rem", "", "2rem"]}
+          >
             {text}
           </Text>
           {children}
