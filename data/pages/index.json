@@ -53,6 +53,20 @@
       "image": "/image/public-health-association.gif"
     }
   ],
+  "recommendedLinks": [
+    {
+      "text": "MRC-Holland",
+      "url": "https://www.mrcholland.com/"
+    },
+    {
+      "text": "Addis Ababa University",
+      "url": "http://www.aau.edu.et/chs/"
+    },
+    {
+      "text": "St.Paul's Hospital Millennium Medical Collage",
+      "url": "http://www.sphmmc.edu.et/"
+    }
+  ],
   "tests_page_label": "Book A Test",
   "contact_page_label": "Contact Us",
   "phone": "251116394118",

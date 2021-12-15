@@ -10,13 +10,17 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 // data
 import indexPageData from "../data/pages/index.json";
 
-const footerData = {
+// Interfaces
+import { FooterData } from "../interfaces/FooterData";
+
+const footerData: FooterData = {
   email: indexPageData.email,
   phone: indexPageData.phone,
   address: indexPageData.address,
   twitter: indexPageData.twitter,
   facebook: indexPageData.facebook,
   linkedin: indexPageData.linkedin,
+  recommendedLinks: indexPageData.recommendedLinks,
   licenseInformation: indexPageData.license_information,
 };
 

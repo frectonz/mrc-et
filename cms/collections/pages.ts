@@ -51,6 +51,23 @@ const homePage: CmsCollectionFile = {
       ],
     },
     {
+      label: "Recommended Links",
+      name: "recommendedLinks",
+      widget: "list",
+      fields: [
+        {
+          name: "text",
+          label: "Text",
+          widget: "string",
+        },
+        {
+          name: "url",
+          label: "URL",
+          widget: "string",
+        },
+      ],
+    },
+    {
       label: "Tests page label",
       name: "tests_page_label",
       widget: "string",

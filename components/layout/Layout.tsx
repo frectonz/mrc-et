@@ -3,8 +3,10 @@ import { ReactNode } from "react";
 // Components
 import Header from "./header";
 import Footer from "./footer/Footer";
-import { FooterData } from "../../interfaces/FooterData";
+
+// Interfaces
 import { NavLink } from "../../interfaces/NavLink";
+import { FooterData } from "../../interfaces/FooterData";
 
 const links: NavLink[] = [
   {
@@ -50,13 +52,14 @@ export default function Layout({ children, footerData }: LayoutProps) {
       {children}
       <Footer
         logoImage="/logo.webp"
-        licenseInfo={footerData.licenseInformation}
-        telephone={footerData.phone}
         email={footerData.email}
+        telephone={footerData.phone}
         location={footerData.address}
-        facebookLink={footerData.facebook}
         twitterLink={footerData.twitter}
+        facebookLink={footerData.facebook}
         linkedInLink={footerData.linkedin}
+        licenseInfo={footerData.licenseInformation}
+        recommendedLinks={footerData.recommendedLinks}
       />
     </>
   );

@@ -1,3 +1,5 @@
+import { LinkData } from "./LinkData";
+
 export interface FooterData {
   phone: string;
   email: string;
@@ -6,4 +8,5 @@ export interface FooterData {
   facebook: string;
   linkedin: string;
   licenseInformation: string;
+  recommendedLinks: LinkData[];
 }
