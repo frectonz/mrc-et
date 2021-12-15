@@ -8,6 +8,7 @@ import { Flex, Badge } from "@chakra-ui/react";
 
 // Components
 import Seo from "../components/utils/Seo";
+import InfoList from "../components/main/InfoList";
 import CardList from "../components/main/Cards/CardList";
 import HeroesCarousel from "../templates/HeroesCarousel";
 import Collaborators from "../components/main/Collaborators";
@@ -39,12 +40,15 @@ export default function HomePage({
     <>
       <Seo />
       <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-
       <HeroesCarousel
         headlines={index.headlines}
         testsPageLabel={index.tests_page_label}
         contactPageLabel={index.contact_page_label}
       />
+
+      <MainContainer py={10}>
+        <InfoList infos={index.information} />
+      </MainContainer>
 
       <MainContainer>
         <CardList
@@ -64,7 +68,6 @@ export default function HomePage({
           })}
         />
       </MainContainer>
-
       <MainContainer>
         <Flex align="center" justify="space-between">
           <Badge>Latest Blog</Badge>
@@ -83,11 +86,9 @@ export default function HomePage({
           imageLink={latestBlog.image}
         />
       </MainContainer>
-
       <MainContainer>
         <Testimonials testimonials={testimonials} />
       </MainContainer>
-
       <MainContainer py={50}>
         <Collaborators collaborators={index.collaborators} />
       </MainContainer>
