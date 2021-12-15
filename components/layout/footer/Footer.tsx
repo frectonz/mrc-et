@@ -121,7 +121,7 @@ export default function Footer({
           </Stack>
         </Grid>
         <Divider my={2} />
-        <Text align="center">Copyright &copy; 2020 MRC-ET</Text>
+        <Text align="center">Copyright &copy; 2021 MRC-ET</Text>
       </MainContainer>
     </Box>
   );
