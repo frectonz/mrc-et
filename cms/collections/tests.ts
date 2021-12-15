@@ -66,7 +66,7 @@ export const tests: CmsCollection = {
       label: "Reported After",
       name: "reported_after",
       widget: "string",
-      hint: "Time it takes to conduct the test. E.g: 1-2 weeks",
+      hint: "Time it takes to conduct the test. E.g: 3 weeks",
     },
     {
       label: "Test Category",
