@@ -29,6 +29,28 @@ const homePage: CmsCollectionFile = {
       ],
     },
     {
+      label: "Collaborators",
+      name: "collaborators",
+      widget: "list",
+      fields: [
+        {
+          name: "name",
+          label: "Name",
+          widget: "string",
+        },
+        {
+          name: "url",
+          label: "URL",
+          widget: "string",
+        },
+        {
+          name: "image",
+          label: "Image",
+          widget: "image",
+        },
+      ],
+    },
+    {
       label: "Tests page label",
       name: "tests_page_label",
       widget: "string",

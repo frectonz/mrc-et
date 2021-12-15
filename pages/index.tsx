@@ -10,6 +10,7 @@ import { Flex, Badge } from "@chakra-ui/react";
 import Seo from "../components/utils/Seo";
 import CardList from "../components/main/Cards/CardList";
 import HeroesCarousel from "../templates/HeroesCarousel";
+import Collaborators from "../components/main/Collaborators";
 import MainContainer from "../components/utils/MainContainer";
 import PrimaryButton from "../components/utils/PrimaryButton";
 import Testimonials from "../components/main/Testimonials/Testimonials";
@@ -85,6 +86,10 @@ export default function HomePage({
 
       <MainContainer>
         <Testimonials testimonials={testimonials} />
+      </MainContainer>
+
+      <MainContainer py={50}>
+        <Collaborators collaborators={index.collaborators} />
       </MainContainer>
     </>
   );

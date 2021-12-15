@@ -11,6 +11,48 @@
       "detail": "MRC-ET Advanced Laboratory a molecular diagnostic research laboratory center in Ethiopia Established in 2012 GC and became operational in 2014 GC."
     }
   ],
+  "collaborators": [
+    {
+      "name": "MRC Holland",
+      "url": "https://www.mrcholland.com/",
+      "image": "/image/mrc-holland.svg"
+    },
+    {
+      "name": "Addis Ababa University College of Health Sciences",
+      "url": "http://www.aau.edu.et/chs/",
+      "image": "/image/college-of-health-sciences.png"
+    },
+    {
+      "name": "St. Paul's Hospital Millennium Medical College",
+      "url": "https://sphmmc.edu.et/",
+      "image": "/image/saint-paul.png"
+    },
+    {
+      "name": "Ethiopian Medical Association",
+      "url": "https://emaethiopia.org/",
+      "image": "/image/medical-association.png"
+    },
+    {
+      "name": "Ethiopian Society Obstetricians & Gynecologist",
+      "url": "https://emaethiopia.org/",
+      "image": "/image/medical-association.png"
+    },
+    {
+      "name": "World Health Organization",
+      "url": "https://www.who.int/",
+      "image": "/image/who.svg"
+    },
+    {
+      "name": "Ministry Of Health",
+      "url": "https://www.moh.gov.et/",
+      "image": "/image/moh.png"
+    },
+    {
+      "name": "Ethiopian Public Health Association",
+      "url": "https://www.etpha.org/",
+      "image": "/image/public-health-association.gif"
+    }
+  ],
   "tests_page_label": "Book A Test",
   "contact_page_label": "Contact Us",
   "phone": "251116394118",
