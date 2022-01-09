@@ -2,7 +2,7 @@
 import NextLink from "next/link";
 
 // Chakra UI
-import { Heading } from "@chakra-ui/layout";
+import { Heading } from "@chakra-ui/react";
 
 // Components
 import Seo from "../components/utils/Seo";
