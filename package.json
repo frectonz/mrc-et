@@ -10,7 +10,8 @@
     "build:next": "next build",
     "clean": "rm -rf .next build out public/admin.js",
     "build:all": "pnpm build:cms && pnpm build:next && pnpm export",
-    "build:cms": "esbuild cms/index.ts --bundle --outfile=public/admin.js"
+    "build:cms": "esbuild cms/index.ts --bundle --outfile=public/admin.js",
+    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install"
   },
   "dependencies": {
     "next": "11.1.2",
