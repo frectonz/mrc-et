@@ -59,14 +59,14 @@ export default function Hero({
           <Heading
             as="h1"
             textShadow={textShadow}
-            fontSize={["1.7rem", "2rem", "", "3rem"]}
+            fontSize={["1.7rem", "2rem", "", "2.5rem"]}
           >
             {title}
           </Heading>
           <Text
             maxWidth="65ch"
             textShadow={textShadow}
-            fontSize={["1.2rem", "1.4rem", "", "2rem"]}
+            fontSize={["1.2rem", "1.4rem", "", "1.5rem"]}
           >
             {text}
           </Text>
