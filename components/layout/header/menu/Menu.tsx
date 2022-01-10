@@ -32,7 +32,10 @@ export default function Menu({ links, actionButtonLabel }: MenuProps) {
       <OpenMenuButton onClick={onOpen} />
       <MenuDrawer isOpen={isOpen} onClose={onClose}>
         <Box pb={5}>
-          <Controls actionButtonLabel={actionButtonLabel} />
+          <Controls
+            closeDrawer={onClose}
+            actionButtonLabel={actionButtonLabel}
+          />
         </Box>
         <ColumnNavigation links={links} closeDrawer={onClose} />
       </MenuDrawer>
@@ -40,7 +43,7 @@ export default function Menu({ links, actionButtonLabel }: MenuProps) {
   ) : (
     <>
       <Navigation links={links} />
-      <Controls actionButtonLabel={actionButtonLabel} />
+      <Controls actionButtonLabel={actionButtonLabel} closeDrawer={() => {}} />
     </>
   );
 }

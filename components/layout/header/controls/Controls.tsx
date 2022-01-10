@@ -10,9 +10,11 @@ import PrimaryButton from "../../../utils/PrimaryButton";
 
 interface ControlsProps extends BoxProps {
   actionButtonLabel: string;
+  closeDrawer: () => void;
 }
 
 export default function Controls({
+  closeDrawer,
   actionButtonLabel,
   ...rest
 }: ControlsProps) {
@@ -22,7 +24,9 @@ export default function Controls({
       <Spacer width={5} />
       <NextLink href="/tests">
         <a>
-          <PrimaryButton>{actionButtonLabel}</PrimaryButton>
+          <PrimaryButton onClick={closeDrawer}>
+            {actionButtonLabel}
+          </PrimaryButton>
         </a>
       </NextLink>
     </Flex>
