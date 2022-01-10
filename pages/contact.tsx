@@ -40,7 +40,7 @@ export default function Contact() {
   return (
     <>
       <Seo title="Contact Us" />
-      <MainContainer py={100}>
+      <MainContainer pt={150} pb={30}>
         <Heading textTransform="uppercase">Get In Touch</Heading>
         <Grid
           my={5}

@@ -21,7 +21,7 @@ export default function AboutPage({ aboutPageData }: AboutPageProps) {
   return (
     <>
       <Seo title="About" />
-      <MainContainer py={50}>
+      <MainContainer pt={150} pb={30}>
         <Heading textAlign="center" py={5}>
           {aboutPageData.headlineTitle}
         </Heading>
@@ -30,7 +30,7 @@ export default function AboutPage({ aboutPageData }: AboutPageProps) {
           maxW="50ch"
           margin="auto"
           textAlign="center"
-          fontWeight="hairline"
+          fontWeight="light"
         >
           {aboutPageData.headlineDetail}
         </Heading>
