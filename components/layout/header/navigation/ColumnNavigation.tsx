@@ -18,18 +18,32 @@ import { NavLink } from "../../../../interfaces/NavLink";
 // Components
 import ArrowToTheRight from "../../../utils/ArrowToTheRight";
 
-export function ColumnNavigation({ links, ...rest }: NavigationProps) {
+interface ColumnNavigationProps extends NavigationProps {
+  closeDrawer: () => void;
+}
+
+export function ColumnNavigation({
+  links,
+  closeDrawer,
+  ...rest
+}: ColumnNavigationProps) {
   return (
     <Box as="nav" {...rest}>
       <VStack as="ul" listStyleType="none" spacing={["2", "4"]}>
         {links.map((link, i) => (
-          <ColumnLinkItem key={i} link={link} />
+          <ColumnLinkItem key={i} link={link} closeDrawer={closeDrawer} />
         ))}
       </VStack>
     </Box>
   );
 }
-function ColumnLinkItem({ link }: { link: NavLink }) {
+function ColumnLinkItem({
+  link,
+  closeDrawer,
+}: {
+  link: NavLink;
+  closeDrawer: () => void;
+}) {
   const [hover, setHover] = useBoolean(false);
 
   return (
@@ -54,11 +68,11 @@ function ColumnLinkItem({ link }: { link: NavLink }) {
         >
           <Image width="20px" alt="" src={link.icon} />
           <NextLink href={link.href}>
-            <a>{link.name}</a>
+            <a onClick={closeDrawer}>{link.name}</a>
           </NextLink>
         </Box>
         <NextLink href={link.href}>
-          <a>
+          <a onClick={closeDrawer}>
             <ArrowToTheRight hover={hover} />
           </a>
         </NextLink>

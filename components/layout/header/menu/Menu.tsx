@@ -34,7 +34,7 @@ export default function Menu({ links, actionButtonLabel }: MenuProps) {
         <Box pb={5}>
           <Controls actionButtonLabel={actionButtonLabel} />
         </Box>
-        <ColumnNavigation links={links} />
+        <ColumnNavigation links={links} closeDrawer={onClose} />
       </MenuDrawer>
     </>
   ) : (
