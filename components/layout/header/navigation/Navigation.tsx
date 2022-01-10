@@ -28,17 +28,15 @@ function LinkItem({ link }: { link: NavLink }) {
     <Box
       p={2}
       as="li"
+      gap="3"
       fontSize="xl"
-      cursor="pointer"
-      _hover={{ color: "brand.secondary" }}
       display="flex"
+      cursor="pointer"
       alignItems="center"
       justifyContent="center"
-      style={{
-        gap: "5px",
-      }}
+      _hover={{ color: "brand.secondary" }}
     >
-      <Image width="20px" alt="" src={link.icon} />
+      <Image width="15px" alt="" src={link.icon} />
       <NextLink href={link.href}>
         <a>{link.name}</a>
       </NextLink>
