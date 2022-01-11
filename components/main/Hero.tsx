@@ -43,9 +43,9 @@ export default function Hero({
   return (
     <Box
       {...rest}
-      h={["90vh", null, null, "70vh"]}
-      color={textColor}
       {...background}
+      color={textColor}
+      h={["90vh", null, null, "70vh"]}
     >
       <MainContainer height="100%">
         <Stack
