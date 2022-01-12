@@ -13,7 +13,7 @@ export default function NotFoundPage() {
   return (
     <>
       <Seo title="Not Found" />
-      <MainContainer>
+      <MainContainer mt={120}>
         <Heading mt={10} textAlign="center">
           Coming Soon.
         </Heading>
