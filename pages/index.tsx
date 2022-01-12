@@ -68,6 +68,7 @@ export default function HomePage({
           })}
         />
       </MainContainer>
+
       <MainContainer>
         <Flex align="center" justify="space-between">
           <Badge>Latest Blog</Badge>
@@ -86,9 +87,11 @@ export default function HomePage({
           imageLink={latestBlog.image}
         />
       </MainContainer>
+
       <MainContainer>
         <Testimonials testimonials={testimonials} />
       </MainContainer>
+
       <MainContainer py={50}>
         <Collaborators collaborators={index.collaborators} />
       </MainContainer>
