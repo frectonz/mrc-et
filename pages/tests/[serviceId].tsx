@@ -8,9 +8,6 @@ import { HeroData } from "../../interfaces/HeroData";
 // Templates
 import TestsTemplate from "../../templates/TestsTemplate";
 
-// Data
-import test from "../../data/pages/tests.json";
-
 interface ServiceTestsPageProps {
   tests: TestData[];
   hero: HeroData;
@@ -21,12 +18,7 @@ export default function TestsOfAServicePage({
   tests,
 }: ServiceTestsPageProps) {
   return (
-    <TestsTemplate
-      hero={hero}
-      tests={tests}
-      seoTitle={hero.headlineTitle}
-      samplingTechniqueLabel={test.sampling_technique}
-    />
+    <TestsTemplate hero={hero} tests={tests} seoTitle={hero.headlineTitle} />
   );
 }
 
