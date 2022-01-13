@@ -69,7 +69,7 @@ export default function TestCard({ test }: TestCardProps) {
         </Tbody>
       </Table>
 
-      <NextLink href="/coming-soon">
+      <NextLink href="/book-test">
         <a>
           <PrimaryButton float="right" size={size}>
             Book Test
