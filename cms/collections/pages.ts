@@ -68,33 +68,6 @@ const homePage: CmsCollectionFile = {
       ],
     },
     {
-      label: "Information",
-      name: "information",
-      widget: "list",
-      fields: [
-        {
-          name: "title",
-          label: "Title",
-          widget: "string",
-        },
-        {
-          name: "url",
-          label: "URL",
-          widget: "string",
-        },
-        {
-          name: "image",
-          label: "Image",
-          widget: "image",
-        },
-        {
-          name: "detail",
-          label: "Detail",
-          widget: "text",
-        },
-      ],
-    },
-    {
       label: "Tests page label",
       name: "tests_page_label",
       widget: "string",
@@ -202,9 +175,60 @@ const aboutPage: CmsCollectionFile = {
   ],
 };
 
+const servicesPage: CmsCollectionFile = {
+  name: "services_page",
+  label: "Services Page",
+  file: "data/pages/services.json",
+  description: "Services page configuration",
+  fields: [
+    {
+      label: "Headline Title",
+      name: "headline_title",
+      widget: "string",
+    },
+    {
+      label: "Headline Detail",
+      name: "headline_detail",
+      widget: "text",
+    },
+    {
+      label: "Headline Image",
+      name: "headline_image",
+      widget: "image",
+    },
+    {
+      label: "Information",
+      name: "information",
+      widget: "list",
+      fields: [
+        {
+          name: "title",
+          label: "Title",
+          widget: "string",
+        },
+        {
+          name: "url",
+          label: "URL",
+          widget: "string",
+        },
+        {
+          name: "image",
+          label: "Image",
+          widget: "image",
+        },
+        {
+          name: "detail",
+          label: "Detail",
+          widget: "text",
+        },
+      ],
+    },
+  ],
+};
+
 export const pages: CmsCollection = {
   name: "pages",
   label: "Pages",
   delete: false,
-  files: [homePage, testsPage, aboutPage],
+  files: [homePage, testsPage, aboutPage, servicesPage],
 };
