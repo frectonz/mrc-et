@@ -72,7 +72,7 @@ export default function TestCard({ test }: TestCardProps) {
       <NextLink href="/coming-soon">
         <a>
           <PrimaryButton float="right" size={size}>
-            Book a test
+            Book Test
           </PrimaryButton>
         </a>
       </NextLink>
