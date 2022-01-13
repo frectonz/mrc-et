@@ -197,8 +197,8 @@ const servicesPage: CmsCollectionFile = {
       widget: "image",
     },
     {
-      label: "Information",
-      name: "information",
+      label: "Services",
+      name: "services",
       widget: "list",
       fields: [
         {
