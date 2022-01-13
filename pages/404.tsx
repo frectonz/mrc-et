@@ -13,8 +13,8 @@ export default function NotFoundPage() {
   return (
     <>
       <Seo title="Not Found" />
-      <MainContainer>
-        <Heading my={5}>The page you requested was not found.</Heading>
+      <MainContainer mt={150} mb={120}>
+        <Heading>The page you requested was not found.</Heading>
         <NextLink href="/">
           <a>
             <PrimaryButton my={5}>Go to Home Page</PrimaryButton>
