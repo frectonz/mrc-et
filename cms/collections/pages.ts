@@ -32,8 +32,6 @@ const homePage: CmsCollectionFile = {
       label: "Collaborators",
       name: "collaborators",
       widget: "list",
-      media_folder: "{{media_folder}}/collaborators",
-      public_folder: "{{public_folder}}/collaborators",
       fields: [
         {
           name: "name",

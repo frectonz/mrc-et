@@ -17,11 +17,11 @@ CMS.init({
       preview: false,
     },
     local_backend: true,
+    logo_url: "/logo.webp",
     public_folder: "/image",
     media_folder: "public/image",
     site_url: "https://mrc-et.netlify.app",
     display_url: "https://mrc-et.netlify.app",
-    logo_url: "/logo.webp",
     collections: [pages, tests, services, testimonials, blogs],
   },
 });
