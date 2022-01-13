@@ -25,25 +25,15 @@ export default function TestsTemplate({
   seoTitle,
   samplingTechniqueLabel,
 }: TestsTemplateProps) {
-  const [testsList, setTestsList] = useState(tests);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handleChange = (searchStr: any) => {
-    if (typeof searchStr === "string")
-      setTestsList(
-        tests.filter((test) => {
-          const searchingWithCode = test.code
-            .toLowerCase()
-            .includes(searchStr.toLowerCase());
-          const searchingWithName = test.name
-            .toLowerCase()
-            .includes(searchStr.toLowerCase());
-
-          return searchStr === ""
-            ? true
-            : searchingWithName || searchingWithCode;
-        })
-      );
+    if (typeof searchStr === "string") {
+      setSelectedOption(searchStr);
+    }
   };
+
+  const handleClear = () => setSelectedOption("");
 
   return (
     <>
@@ -61,11 +51,31 @@ export default function TestsTemplate({
       </Hero>
 
       <MainContainer my={30}>
-        <TestsSearchInput tests={tests} onChange={handleChange} />
+        <TestsSearchInput
+          tests={tests}
+          onClear={handleClear}
+          value={selectedOption}
+          onChange={handleChange}
+        />
       </MainContainer>
 
       <MainContainer>
-        <TestsList tests={testsList} />
+        <TestsList
+          tests={tests.filter((test) => {
+            if (selectedOption === "") {
+              return true;
+            }
+
+            const searchingWithCode = test.code
+              .toLowerCase()
+              .includes(selectedOption.toLowerCase());
+            const searchingWithName = test.name
+              .toLowerCase()
+              .includes(selectedOption.toLowerCase());
+
+            return searchingWithName || searchingWithCode;
+          })}
+        />
       </MainContainer>
     </>
   );
