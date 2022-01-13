@@ -9,10 +9,10 @@ import Seo from "../components/utils/Seo";
 import PrimaryButton from "../components/utils/PrimaryButton";
 import MainContainer from "../components/utils/MainContainer";
 
-export default function NotFoundPage() {
+export default function ComingSoonPage() {
   return (
     <>
-      <Seo title="Not Found" />
+      <Seo title="Coming Soon" />
       <MainContainer mt={120}>
         <Heading mt={10} textAlign="center">
           Coming Soon.
