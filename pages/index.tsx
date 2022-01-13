@@ -8,7 +8,6 @@ import { Flex, Badge } from "@chakra-ui/react";
 
 // Components
 import Seo from "../components/utils/Seo";
-import InfoList from "../components/main/InfoList";
 import CardList from "../components/main/Cards/CardList";
 import HeroesCarousel from "../templates/HeroesCarousel";
 import Collaborators from "../components/main/Collaborators";
@@ -45,10 +44,6 @@ export default function HomePage({
         testsPageLabel={index.tests_page_label}
         contactPageLabel={index.contact_page_label}
       />
-
-      <MainContainer py={10}>
-        <InfoList infos={index.information} />
-      </MainContainer>
 
       <MainContainer>
         <CardList

@@ -15,6 +15,11 @@ const links: NavLink[] = [
     icon: "/icons/hospital.svg",
   },
   {
+    name: "Services",
+    href: "/services",
+    icon: "/icons/medicine.svg",
+  },
+  {
     name: "Tests",
     href: "/tests",
     icon: "/icons/microscope.svg",

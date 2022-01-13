@@ -80,55 +80,5 @@
       "detail": "ኤም አር ሲ-ኢት አድቫንስድ ላብራቶሪ በ ዲኤንኤ ወይም ዘረመል ናሙና ላይ የተመሰረተ ምርመራ በማድረግ ከዉልደት በፊት ወይም በኋላ በዘረመል መዛባት ከትውልድ ወደ ትውልድ ሊወራረሱ የሚችሉ የጤና ችግሮችን ያሳውቃል፣ የተሟላ የላብራቶሪ አገልግሎቶችንም ይሰጣል፡፡",
       "image": "/image/genetic-defects.jpg"
     }
-  ],
-  "information": [
-    {
-      "url": "",
-      "image": "/image/corona.png",
-      "title": "SARS-CoV2 (COVID-19) testing",
-      "detail": "We offer SARS-CoV2 (COVID-19) testing and complete laboratory services. RT-PCR based COVID-19 test for travelers & patients Results delivered within: 4 hrs. and 12 hrs."
-    },
-    {
-      "url": "http://www.ndss.org/Down-Syndrome/",
-      "title": "DOWN SYNDROME",
-      "image": "/image/down-syndrome.png",
-      "detail": "DOWN SYNDROME is a condition in which extra genetic material causes delays in the way a child develops, both physically and mentally"
-    },
-    {
-      "url": "http://www.diabetesgenes.org/content/mody",
-      "title": "MODY",
-      "image": "/image/mody.png",
-      "detail": "MODY is a rare form of diabetes which is different from both Type 1 and Type 2 diabetes, and runs strongly in families."
-    },
-    {
-      "url": "http://kidshealth.org/en/parents/birth-defects.html",
-      "title": "BIRTH DEFECTS",
-      "image": "/image/birth-defects.png",
-      "detail": "BIRTH DEFECTS are problems that some babies have while they are still in the womb. These defects may affect how their organs develop and perform."
-    },
-    {
-      "url": "http://www.facingourrisk.org/index.php",
-      "title": "HEREDITARY CANCER",
-      "image": "/image/hereditary-cancer.png",
-      "detail": "CANCER cases occur in someone who inherited a genetic mutation that increases cancer risk."
-    },
-    {
-      "url": "",
-      "title": "Prenatal and Postnatal diagnosis",
-      "image": "/image/prenatal-postnatal.png",
-      "detail": "Prenatal genetic diagnosis is meant to detect chromosomal abnormalities before birth."
-    },
-    {
-      "url": "",
-      "title": "Hematologic malignancies",
-      "image": "/image/hematologic-malignancies.png",
-      "detail": "These are cancers that affect the blood and lymph. Blood cancer begins in the cells of blood forming tissue or cells of the immune system."
-    },
-    {
-      "url": "",
-      "image": "/image/tumor.png",
-      "title": "Tumor characterization",
-      "detail": "These are cancers that affect the blood and lymph. Blood cancer begins in the cells of blood forming tissue or cells of the immune system."
-    }
   ]
 }
