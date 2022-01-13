@@ -36,3 +36,4 @@ yarn-error.log*
 dist
 public/admin.js
 .vscode
+.netlify
