@@ -17,7 +17,7 @@ const links: NavLink[] = [
   {
     name: "Tests",
     href: "/tests",
-    icon: "/icons/medicine.svg",
+    icon: "/icons/microscope.svg",
   },
   {
     name: "Blogs",
@@ -32,7 +32,7 @@ const links: NavLink[] = [
   {
     name: "Contact",
     href: "/contact",
-    icon: "/icons/microscope.svg",
+    icon: "/icons/contact.svg",
   },
 ];
 
