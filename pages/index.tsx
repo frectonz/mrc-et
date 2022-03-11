@@ -4,7 +4,7 @@ import NextLink from "next/link";
 import type { GetStaticProps } from "next";
 
 // ChakraUI
-import { Flex, Badge } from "@chakra-ui/react";
+import { Flex, Badge, Heading } from "@chakra-ui/react";
 
 // Components
 import Seo from "../components/utils/Seo";
@@ -84,6 +84,7 @@ export default function HomePage({
       </MainContainer>
 
       <MainContainer>
+        <Heading py={5}>Testimonials</Heading>
         <Testimonials testimonials={testimonials} />
       </MainContainer>
 
