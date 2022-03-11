@@ -8,6 +8,7 @@ import { Flex, Badge, Heading } from "@chakra-ui/react";
 
 // Components
 import Seo from "../components/utils/Seo";
+import NewsCard from "../components/main/News/NewsCard";
 import CardList from "../components/main/Cards/CardList";
 import HeroesCarousel from "../templates/HeroesCarousel";
 import Collaborators from "../components/main/Collaborators";
@@ -18,6 +19,7 @@ import TwoColumnSection from "../components/main/TwoColumnSection/TwoColumnSecti
 
 // Interfaces
 import { BlogData } from "../interfaces/BlogData";
+import { NewsData } from "../interfaces/NewsData";
 import { ServiceData } from "../interfaces/ServiceData";
 import { TestimonialData } from "../interfaces/TestimonialData";
 
@@ -26,6 +28,7 @@ import index from "../data/pages/index.json";
 
 export interface HomePageProps {
   latestBlog: BlogData;
+  latestNews: NewsData;
   services: ServiceData[];
   testimonials: TestimonialData[];
 }
@@ -33,6 +36,7 @@ export interface HomePageProps {
 export default function HomePage({
   services,
   latestBlog,
+  latestNews,
   testimonials,
 }: HomePageProps) {
   return (
@@ -67,7 +71,6 @@ export default function HomePage({
       <MainContainer>
         <Flex align="center" justify="space-between">
           <Badge>Latest Blog</Badge>
-
           <NextLink href="/blogs">
             <a>
               <PrimaryButton size="sm">Read our blogs</PrimaryButton>
@@ -80,7 +83,20 @@ export default function HomePage({
           link={`/blogs/${latestBlog.id}`}
           linkText="Read More"
           imageLink={latestBlog.image}
+          subtitle={latestBlog.date}
         />
+      </MainContainer>
+
+      <MainContainer>
+        <Flex align="center" justify="space-between">
+          <Badge>Latest News</Badge>
+          <NextLink href="/news">
+            <a>
+              <PrimaryButton size="sm">Read our News</PrimaryButton>
+            </a>
+          </NextLink>
+        </Flex>
+        <NewsCard news={latestNews} />
       </MainContainer>
 
       <MainContainer>
@@ -96,16 +112,23 @@ export default function HomePage({
 }
 
 // Library
+import { getAllNewses } from "../lib/news";
 import { getAllBlogs } from "../lib/blogs";
 import { getAllServices } from "../lib/services";
 import { getAllTestimonials } from "../lib/testimonials";
 
 export const getStaticProps: GetStaticProps<HomePageProps> = () => {
   const blogs = getAllBlogs();
+  const newses = getAllNewses();
   const services = getAllServices();
   const testimonials = getAllTestimonials();
 
   return {
-    props: { services, testimonials, latestBlog: blogs[0] },
+    props: {
+      services,
+      testimonials,
+      latestBlog: blogs[0],
+      latestNews: newses[0],
+    },
   };
 };

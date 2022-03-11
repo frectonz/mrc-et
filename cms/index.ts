@@ -1,6 +1,7 @@
 import CMS from "netlify-cms-app";
 
 // Collections
+import { news } from "./collections/news";
 import { pages } from "./collections/pages";
 import { tests } from "./collections/tests";
 import { blogs } from "./collections/blogs";
@@ -22,6 +23,6 @@ CMS.init({
     media_folder: "public/image",
     site_url: "https://mrc-et.netlify.app",
     display_url: "https://mrc-et.netlify.app",
-    collections: [pages, tests, services, testimonials, blogs],
+    collections: [pages, tests, services, testimonials, blogs, news],
   },
 });

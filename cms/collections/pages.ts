@@ -221,9 +221,33 @@ const servicesPage: CmsCollectionFile = {
   ],
 };
 
+const newsPage: CmsCollectionFile = {
+  name: "news_page",
+  label: "News Page",
+  file: "data/pages/news.json",
+  description: "News page configuration",
+  fields: [
+    {
+      label: "Headline Title",
+      name: "headline_title",
+      widget: "string",
+    },
+    {
+      label: "Headline Detail",
+      name: "headline_detail",
+      widget: "text",
+    },
+    {
+      label: "Headline Image",
+      name: "headline_image",
+      widget: "image",
+    },
+  ],
+};
+
 export const pages: CmsCollection = {
   name: "pages",
   label: "Pages",
   delete: false,
-  files: [homePage, testsPage, aboutPage, servicesPage],
+  files: [homePage, testsPage, aboutPage, servicesPage, newsPage],
 };

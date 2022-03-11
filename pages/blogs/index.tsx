@@ -35,6 +35,7 @@ export default function Blogs({ blogs }: BlogsPage) {
               title={blog.title}
               text={blog.detail}
               linkText="Read More"
+              subtitle={blog.date}
               imageLink={blog.image}
               link={`/blogs/${blog.id}`}
             />
