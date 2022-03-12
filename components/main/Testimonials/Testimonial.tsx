@@ -1,10 +1,10 @@
 // ChakraUI
 import {
+  Box,
   Text,
   Flex,
   Heading,
   Avatar,
-  Box,
   useColorMode,
 } from "@chakra-ui/react";
 
